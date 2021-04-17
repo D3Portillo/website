@@ -1,65 +1,49 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head"
+import Home from "@/components/Home"
+import Bio from "@/components/Bio"
+import PageSeparator from "@/components/shared/PageSeparator"
+import Showcase from "@/components/Showcase"
+import Skills from "@/components/Skills"
+import Social from "@/components/Social"
+import Moar from "@/components/Moar"
+import ContactForm from "@/components/ContactForm"
+import Footer from "@/components/Footer"
+import getShowcaseItems from "@/services/getShowcaseItems"
 
-export default function Home() {
+export default function HomePage({ showcaseItems = [] }) {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>Denny Portillo | D3Portillo</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      <Home />
+      <PageSeparator />
+      <div className="px-10">
+        <Bio />
+        <PageSeparator />
+        <Showcase items={showcaseItems} />
+        <PageSeparator />
+        <Skills />
+        <PageSeparator />
+        <Social />
+        <PageSeparator />
+        <Moar />
+        <PageSeparator />
+      </div>
+      <ContactForm />
+      <Footer />
+    </>
   )
+}
+
+export async function getStaticProps() {
+  const showcaseItems = await getShowcaseItems()
+  return {
+    props: {
+      showcaseItems,
+      revalidate: 5,
+    },
+  }
 }
