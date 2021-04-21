@@ -1,5 +1,5 @@
-import Title from "@/components/shared/Title"
-import ExternalLink from "@/components/shared/ExternalLink"
+import Title from "@/components/Title"
+import ExternalLink from "@/components/ExternalLink"
 
 export default function Moar() {
   return (

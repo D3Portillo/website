@@ -1,4 +1,4 @@
-import ExternalLink from "@/components/shared/ExternalLink"
+import ExternalLink from "@/components/ExternalLink"
 import locale from "date-fns/locale/es"
 import { format } from "date-fns"
 import { useMemo } from "react"

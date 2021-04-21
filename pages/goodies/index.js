@@ -2,8 +2,8 @@ import Goodies from "@/components/Goodies"
 import getGoodies from "@/services/getGoodies"
 import Head from "next/head"
 import Footer from "@/components/Footer"
-import PageSeparator from "@/components/shared/PageSeparator"
-import TopNavigation from "@/components/TopNavigation"
+import PageSeparator from "@/components/PageSeparator"
+import PageContainer from "@/components/PageContainer"
 
 export default function GoodiesPage({ goodies = [] }) {
   return (
@@ -13,12 +13,11 @@ export default function GoodiesPage({ goodies = [] }) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <TopNavigation />
-      <div className="px-10">
+      <PageContainer withNavigation>
         <Goodies items={goodies} />
-      </div>
+      </PageContainer>
       <PageSeparator />
-      <Footer/>
+      <Footer />
     </>
   )
 }

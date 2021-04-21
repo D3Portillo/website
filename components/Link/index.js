@@ -1,5 +1,5 @@
-import ExternalLink from "@/components/shared/ExternalLink"
-import { ArrowRight } from "@/components/shared/Icons"
+import ExternalLink from "@/components/ExternalLink"
+import { ArrowRight } from "@/components/Icons"
 import { FiArrowUpRight } from "react-icons/fi"
 
 function Minimal({ children = null, href, target, download, title }) {
@@ -9,7 +9,7 @@ function Minimal({ children = null, href, target, download, title }) {
       download={download}
       target={target}
       href={href}
-      className="border-yellow group font-semibold border-b-4 italic"
+      className="border-yellow mb-px inline-block group font-semibold border-b-4 italic"
     >
       {children}
       <span className="ml-1">

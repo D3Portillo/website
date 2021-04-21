@@ -1,14 +1,11 @@
+import DefaultPageLayout from "@/layouts/DefaultPageLayout"
 import "../styles/globals.css"
-
-function Layout({ children = null }) {
-  return <div className="p-10 text-4xl pb-0">{children}</div>
-}
 
 function App({ Component, pageProps }) {
   return (
-    <Layout>
+    <DefaultPageLayout>
       <Component {...pageProps} />
-    </Layout>
+    </DefaultPageLayout>
   )
 }
 

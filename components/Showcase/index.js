@@ -1,7 +1,7 @@
 import { useMemo } from "react"
-import Title from "@/components/shared/Title"
+import Title from "@/components/Title"
 import Item from "./Item"
-import ItemsGallery from "@/components/shared/ItemsGallery"
+import ItemsGallery from "@/components/ItemsGallery"
 
 export default function Showcase({ items = [] }) {
   const itemsRender = useMemo(() => {

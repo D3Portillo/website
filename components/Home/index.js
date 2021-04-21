@@ -1,5 +1,5 @@
 import { FORM_ID } from "@/components/ContactForm"
-import Link from "@/components/shared/Link"
+import Link from "@/components/Link"
 const minWidth = 580
 
 export default function Home() {

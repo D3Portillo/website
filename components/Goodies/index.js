@@ -1,7 +1,7 @@
 import { useMemo } from "react"
-import Title from "@/components/shared/Title"
-import ItemsGallery from "@/components/shared/ItemsGallery"
-import PageSeparator from "@/components/shared/PageSeparator"
+import Title from "@/components/Title"
+import ItemsGallery from "@/components/ItemsGallery"
+import PageSeparator from "@/components/PageSeparator"
 import Item from "./Item"
 
 function getTopics(tags = [], topics = []) {

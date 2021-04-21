@@ -1,4 +1,4 @@
-import Title from "@/components/shared/Title"
+import Title from "@/components/Title"
 import { useState } from "react"
 import SkillBar from "./SkillBar"
 import Slider from "./Slider"

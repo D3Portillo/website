@@ -1,6 +1,6 @@
 import React from "react"
 import { FiTwitter } from "react-icons/fi"
-import ExternalLink from "@/components/shared/ExternalLink"
+import ExternalLink from "@/components/ExternalLink"
 import { FORM_ID } from "@/components/ContactForm"
 import { useRouter } from "next/router"
 

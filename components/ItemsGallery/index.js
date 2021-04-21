@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { ArrowRight, ArrowLeft } from "@/components/shared/Icons"
+import { ArrowRight, ArrowLeft } from "@/components/Icons"
 import styled from "styled-components"
 import { getArrowHandler, getWidth } from "./helpers"
 

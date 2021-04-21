@@ -1,6 +1,6 @@
 import { RiInstagramFill, RiLinkedinFill } from "react-icons/ri"
 import { GrTwitter } from "react-icons/gr"
-import ExternalLink from "@/components/shared/ExternalLink"
+import ExternalLink from "@/components/ExternalLink"
 
 function LinkTo({ children = null, href, title }) {
   return (

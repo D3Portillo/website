@@ -7,7 +7,7 @@
   scroll-behavior: smooth;
 }
 
-*[hidden] {
+[hidden] {
   display: none;
 }
 

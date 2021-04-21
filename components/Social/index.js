@@ -1,5 +1,5 @@
-import Title from "@/components/shared/Title"
-import Link from "@/components/shared/Link"
+import Title from "@/components/Title"
+import Link from "@/components/Link"
 import Mood from "./Mood"
 
 export default function Social() {

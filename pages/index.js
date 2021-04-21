@@ -1,7 +1,7 @@
 import Head from "next/head"
 import Home from "@/components/Home"
 import Bio from "@/components/Bio"
-import PageSeparator from "@/components/shared/PageSeparator"
+import PageSeparator from "@/components/PageSeparator"
 import Showcase from "@/components/Showcase"
 import Skills from "@/components/Skills"
 import Social from "@/components/Social"
@@ -9,6 +9,7 @@ import Moar from "@/components/Moar"
 import ContactForm from "@/components/ContactForm"
 import Footer from "@/components/Footer"
 import getShowcaseItems from "@/services/getShowcaseItems"
+import PageContainer from "@/components/PageContainer"
 
 export default function HomePage({ showcaseItems = [] }) {
   return (
@@ -20,7 +21,7 @@ export default function HomePage({ showcaseItems = [] }) {
       </Head>
       <Home />
       <PageSeparator />
-      <div className="px-10">
+      <PageContainer>
         <Bio />
         <PageSeparator />
         <Showcase items={showcaseItems} />
@@ -31,7 +32,7 @@ export default function HomePage({ showcaseItems = [] }) {
         <PageSeparator />
         <Moar />
         <PageSeparator />
-      </div>
+      </PageContainer>
       <ContactForm />
       <Footer />
     </>
