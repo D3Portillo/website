@@ -4,23 +4,17 @@ import ItemsGallery from "@/components/ItemsGallery"
 import PageSeparator from "@/components/PageSeparator"
 import Item from "./Item"
 
-function getTopics(tags = [], topics = []) {
-  return tags.filter((tag) => {
-    return topics.indexOf(tag) === -1
-  })
-}
-
 export default function Showcase({ items = [] }) {
   const [itemsRender, topics] = useMemo(() => {
-    const topics = []
+    let topics = []
     const renders = items.map((item) => {
-      const { description, id, name, presentedDate, preview, tags, url } = item
-      topics.push(...getTopics(tags, topics))
+      const { title, description, id, presentedDate, preview, tags, url } = item
+      topics = new Set([...topics, ...tags])
       return (
         <Item
+          title={title}
           key={id}
           description={description}
-          name={name}
           url={url}
           presentedDate={presentedDate}
           preview={preview}
@@ -28,19 +22,23 @@ export default function Showcase({ items = [] }) {
         />
       )
     })
-    return [renders, topics]
+    return [renders, Array.from(topics)]
   }, [items])
 
   const topicsRender = topics.join(", ")
   return (
     <>
       <Title>SOME GOODIES</Title>
-      <img className="w-full max-w-xl mb-8" src="/svg/pinata.svg" alt="" />
+      <img
+        className="w-full max-w-2xl mb-8 mt-12 lg:mt-0"
+        src="/svg/pinata.svg"
+        alt="Pinata is loading..."
+      />
       <PageSeparator />
       <ItemsGallery>{itemsRender}</ItemsGallery>
       <PageSeparator />
-      <p className="text-2xl text-right">
-        Most used topics: <i className="capitalize">{topicsRender}</i>.
+      <p className="lg:text-2xl text-right">
+        Topics: <i className="capitalize">{topicsRender}</i>.
       </p>
     </>
   )

@@ -1,21 +1,22 @@
 import { useMemo } from "react"
 import { Note as NoteType } from "@/services/getNotes"
 import { format } from "date-fns"
-import Footer from "@/components/Footer"
 import Note from "./Note"
-import ContactForm from "@/components/ContactForm"
 import styled from "styled-components"
-import PageContainer from "@/components/PageContainer"
+import { screens } from "tailwindcss/defaultTheme"
+
 const Grid = styled.div`
-  column-count: 2;
-  column-gap: 0;
+  @media (min-width: ${screens.lg}) {
+    column-count: 2;
+    column-gap: 0;
+  }
 `
 
 /**
  * @param {{ notes: NoteType[] }} props
  */
 export default function Notes({ notes = [] }) {
-  const [firstNote, restNotes] = useMemo(() => {
+  const $notes = useMemo(() => {
     const [first, ...rest] = notes.map((note) => {
       const { created_at, description, cover, title, labels, path } = note
       const date = format(new Date(created_at), "MMMM dd.yy")
@@ -30,17 +31,13 @@ export default function Notes({ notes = [] }) {
         />
       )
     })
-    return [first, rest]
+    return { first, rest }
   })
 
   return (
     <>
-      <PageContainer isFull withNavigation>
-        {firstNote}
-        <Grid>{restNotes}</Grid>
-      </PageContainer>
-      <ContactForm />
-      <Footer />
+      {$notes.first}
+      <Grid>{$notes.rest}</Grid>
     </>
   )
 }

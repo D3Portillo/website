@@ -1,12 +1,15 @@
 import { FORM_ID } from "@/components/ContactForm"
 import Link from "@/components/Link"
-const minWidth = 580
+const minWidth = 520
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen">
-      <div className="flex-grow flex items-end">
-        <div tabIndex="0" className="group cursor-pointer select-none outline-none">
+    <div className="flex min-h-screen flex-col-reverse lg:flex-row">
+      <div className="flex-grow flex items-end justify-end lg:justify-start">
+        <div
+          tabIndex="0"
+          className="group cursor-pointer select-none outline-none"
+        >
           <img
             style={{
               minWidth,
@@ -26,7 +29,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <p className="max-w-xl text-right">
+      <p className="max-w-xl text-2xl lg:text-4xl text-right px-10 lg:p-0">
         👋 Hey, <i>Denny</i> here.
         <br />
         Love <u>JavaScript</u> and playing around with the Web Universe.

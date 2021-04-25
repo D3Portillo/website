@@ -2,6 +2,7 @@ import Footer from "@/components/Footer"
 import getNotes, { Note } from "@/services/getNotes"
 import ContactForm from "@/components/ContactForm"
 import Notes from "@/components/Notes"
+import PageContainer from "@/components/PageContainer"
 
 /**
  * @param {{ notes: Note[] }} props
@@ -9,7 +10,9 @@ import Notes from "@/components/Notes"
 export default function NotesPage({ notes = [] }) {
   return (
     <>
-      <Notes notes={notes} />
+      <PageContainer isFull withNavigation>
+        <Notes notes={notes} />
+      </PageContainer>
       <ContactForm />
       <Footer />
     </>

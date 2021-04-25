@@ -1,3 +1,4 @@
+import Image from "@/components/Image"
 import { useCallback, useEffect, useRef, useState } from "react"
 const spotify = {
   name: "something",
@@ -32,13 +33,13 @@ export default function Mood() {
   return (
     <>
       <div className="bg-black w-full max-w-2xl">
-        <div className="flex justify-end italic text-white font-bold text-6xl px-4 py-2">
+        <div className="flex justify-end italic text-white font-bold text-5xl lg:text-7xl px-4 py-2">
           MY MOOD
         </div>
-        <div className="relative">
-          <img
+        <div className="relative p-3">
+          <Image
             style={{ minHeight: "8rem" }}
-            className="object-cover w-full h-full text-white text-lg p-4 pt-0 text-center"
+            className="object-cover w-full h-full text-white"
             src={song.cover}
             alt="This might be loading, it's spotify fault!"
           />
@@ -49,7 +50,7 @@ export default function Mood() {
           />
         </div>
       </div>
-      <p className="text-lg">
+      <p className="lg:text-lg">
         Listening to{" "}
         <i>
           {song.name} by {song.artists}

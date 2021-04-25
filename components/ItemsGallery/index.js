@@ -1,26 +1,37 @@
 import { useRef, useState } from "react"
 import { ArrowRight, ArrowLeft } from "@/components/Icons"
+import { screens } from "tailwindcss/defaultTheme"
 import styled from "styled-components"
-import { getArrowHandler, getWidth } from "./helpers"
-
-const Left = getArrowHandler(ArrowLeft, "ml-3 left-0")
-const Right = getArrowHandler(ArrowRight, "mr-3 right-0")
+import getArrowHandler from "./helpers/getArrowHandler"
+const Left = getArrowHandler(ArrowLeft, "transform left-0", {
+  transform: "translateX(-50%)",
+})
+const Right = getArrowHandler(ArrowRight, "transform right-0", {
+  transform: "translateX(50%)",
+})
 const ItemContainer = styled.div`
-  .arrow {
-    visibility: hidden;
-  }
   &:hover .arrow {
     visibility: visible;
+  }
+  @media (min-width: ${screens.lg}) {
+    .arrow {
+      visibility: hidden;
+    }
   }
 `
 
 /**
- * @param { Number } left
  * @param { ()=> HTMLDivElement } getContainer
+ * @param { (Number) => Number } amountHandler
  * @returns { ()=> void }
  */
-function scrollTo(left = 0, getContainer) {
-  return () => getContainer().scroll({ left })
+function scrollTo(getContainer, amountHandler = (n) => n) {
+  return () => {
+    const container = getContainer()
+    const { clientWidth } = container
+    const amount = clientWidth < 600 ? clientWidth : clientWidth * 0.55
+    container.scrollBy({ left: amountHandler(amount) })
+  }
 }
 
 export default function ItemsGallery({ children = null }) {
@@ -29,13 +40,12 @@ export default function ItemsGallery({ children = null }) {
     left: false,
     right: true,
   })
-  const width = getWidth()
   const getContainer = () => $scrollableContainer.current
-  const scrollLeft = scrollTo(-width, getContainer)
-  const scrollRight = scrollTo(width, getContainer)
+  const scrollLeftHandler = scrollTo(getContainer, (amount) => -amount)
+  const scrollRightHandler = scrollTo(getContainer)
   function handleScroll(/** @type { UIEvent } */ e) {
     // Spacing that triggers left or right arrows to be hidden
-    const gap = 200
+    const gap = 50
     let newShowArrows = { left: false, right: false }
     const { scrollWidth, scrollLeft, clientWidth } = e.currentTarget
     const maxScroll = scrollWidth - clientWidth
@@ -53,15 +63,15 @@ export default function ItemsGallery({ children = null }) {
 
   return (
     <ItemContainer className="w-full relative flex items-center">
-      <Left onClick={scrollLeft} hidden={!showArrows.left} />
+      <Left onClick={scrollLeftHandler} hidden={!showArrows.left} />
       <div
         onScroll={handleScroll}
         ref={$scrollableContainer}
-        className="flex space-x-16 overflow-y-hidden overflow-x-auto"
+        className="flex space-x-10 overflow-y-hidden overflow-x-auto"
       >
         {children}
       </div>
-      <Right onClick={scrollRight} hidden={!showArrows.right} />
+      <Right onClick={scrollRightHandler} hidden={!showArrows.right} />
     </ItemContainer>
   )
 }

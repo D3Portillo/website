@@ -25,8 +25,11 @@ export default async function getNotes(addBody = false) {
     ghNotes.map(async (note) => {
       const { created_at, body, labels, title } = note
       const { data: frontmatter, content } = matter(body)
+      const { path = "" } = frontmatter
+      const parsedPath = path.replace(/ +/g, "-")
       return {
         ...frontmatter,
+        path: parsedPath,
         created_at,
         labels,
         body: addBody && content,

@@ -1,7 +1,9 @@
+import ImageItem from "@/components/Image"
+
 export default function Image({ src }) {
   return (
-    <div className="w-full my-16 flex justify-center hover:opacity-90">
-      <img src={src} alt="" />
+    <div className="w-full my-16 flex justify-center">
+      <ImageItem src={src} className="hover:opacity-95" />
     </div>
   )
 }

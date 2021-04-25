@@ -1,6 +1,7 @@
 import Head from "next/head"
 import PresentationCards from "@/components/PresentationCards"
 import PageContainer from "@/components/PageContainer"
+import Footer from "@/components/Footer"
 
 export default function CardsPage() {
   return (
@@ -13,6 +14,7 @@ export default function CardsPage() {
       <PageContainer withNavigation>
         <PresentationCards />
       </PageContainer>
+      <Footer/>
     </>
   )
 }

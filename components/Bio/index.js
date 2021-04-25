@@ -1,25 +1,25 @@
 import Title from "@/components/Title"
-import Text from "@/components/Text"
+import Paragraph from "@/components/Paragraph"
 import Link from "@/components/Link"
 export default function Bio() {
   return (
     <>
       <Title>A SHORT BIO</Title>
-      <Text>
+      <Paragraph>
         I’m 22, all stuff related to nowadays gadgets makes me go crazy.
-      </Text>
-      <Text>
+      </Paragraph>
+      <Paragraph>
         My current job is to be Chief Web Officer at the SPOT team 🤘. Some of
         my hobbies are playing around with code, reading, watch anime or playing
         videogames on spare time.
-      </Text>
-      <Text>
+      </Paragraph>
+      <Paragraph>
         I really love automation related topics, Design Systems, DataViz,
         Flutter and Rust.
-      </Text>
-      <Text>
+      </Paragraph>
+      <Paragraph>
         Blog?, Sure!, I write stuff Here ― <Link href="/notes">Notes</Link>
-      </Text>
+      </Paragraph>
     </>
   )
 }

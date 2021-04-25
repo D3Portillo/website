@@ -1,6 +1,7 @@
 import SubmitButton from "./SubmitButton"
 import Textarea from "./Textarea"
 import Input from "./Input"
+import PageContainer from "../PageContainer"
 export const FORM_ID = "CONTACT_FORM_ID"
 
 /** @type { import("react").FormEventHandler } */
@@ -24,12 +25,12 @@ function handleSubmit(e) {
 
 export default function ContactForm() {
   return (
-    <div className="-mx-10">
+    <PageContainer isFull>
       <form
         method="POST"
         onSubmit={handleSubmit}
         id={FORM_ID}
-        className="bg-black px-20 bg-opacity-90 pt-36 pb-40 flex flex-col space-y-4"
+        className="bg-black px-10 lg:px-20 bg-opacity-90 lg:pt-36 pt-16 pb-20 lg:pb-40 flex flex-col space-y-4"
       >
         <Input name="name" placeholder="Your name" />
         <Input
@@ -47,6 +48,6 @@ export default function ContactForm() {
           <SubmitButton />
         </div>
       </form>
-    </div>
+    </PageContainer>
   )
 }

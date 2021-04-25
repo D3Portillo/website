@@ -9,7 +9,13 @@ export default function PageContainer({
   const Navigation = useMemo(() => {
     return withNavigation ? TopNavigation : () => null
   }, [withNavigation])
-  const className = isFull ? "-mx-10" : "px-10"
+  const className = useMemo(() => {
+    const FULL_WIDTH = "lg:-mx-10"
+    if (isFull && withNavigation) {
+      return `${FULL_WIDTH} -mt-10`
+    }
+    return isFull ? FULL_WIDTH : "px-10"
+  }, [isFull, withNavigation])
   return (
     <>
       <Navigation />

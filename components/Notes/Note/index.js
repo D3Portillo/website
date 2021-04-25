@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "@/components/Icons"
+import Image from "@/components/Image"
 import Link from "next/link"
 
 export default function Component({
@@ -12,15 +13,15 @@ export default function Component({
   const labelsDivider = labels.length && "・"
   return (
     <Link href={`/notes/${path}`}>
-      <a className="block group border overflow-hidden">
+      <a className="block group border-t border-b lg:border-l lg:border-r overflow-hidden focus:shadow-inner">
         <div className="w-full flex relative">
-          <img
-            className="w-full filter grayscale group-hover:filter-none"
+          <Image
+            className="w-full filter lg:grayscale group-hover:filter-none"
             hidden={!cover}
             src={cover}
           />
           <div className="flex-grow" />
-          <div className="w-8 h-8 p-2 group-hover:translate-y-8 transition-transform duration-150 text-base transform rotate-90 origin-center whitespace-nowrap flex items-center uppercase">
+          <div className="hidden lg:flex w-8 h-8 p-2 group-hover:translate-y-8 transition-transform duration-150 text-base transform rotate-90 origin-center whitespace-nowrap items-center uppercase">
             {created}
             {labelsDivider}
             {labels.join("・")}
@@ -29,11 +30,11 @@ export default function Component({
             <ArrowUpRight className="text-3xl" />
           </div>
         </div>
-        <div className="p-20 leading-tight text-3xl mb-6">
+        <p className="p-10 lg:p-20 leading-tight lg:text-3xl mb-6">
           <b>{title}</b>
           <br />
           <i>{description}</i>
-        </div>
+        </p>
       </a>
     </Link>
   )

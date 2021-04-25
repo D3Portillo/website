@@ -4,17 +4,27 @@ import Footer from "@/components/Footer"
 import PageSeparator from "@/components/PageSeparator"
 import PageContainer from "@/components/PageContainer"
 import mediumZoom from "medium-zoom"
+import NullComponent from "@/components/NullComponent"
+import Image from "@/components/Image"
 import { useEffect } from "react"
+const NOTE_CONTENT = "NOTE_CONTENT"
+const addZoom = () => mediumZoom(`.${NOTE_CONTENT} img`)
 
 export default function NotePage({ note = Note }) {
-  const { body } = note
-  useEffect(() => {
-    mediumZoom(`.content img`)
-  }, [])
+  const { body, cover } = note
+  const CoverSeparator = cover ? PageSeparator : NullComponent
+  useEffect(addZoom, [])
   return (
     <>
-      <PageContainer withNavigation>
-        <div className="content" dangerouslySetInnerHTML={{ __html: body }} />
+      <PageContainer withNavigation isFull={cover}>
+        <Image hidden={!cover} src={cover} className="w-full" />
+      </PageContainer>
+      <CoverSeparator />
+      <PageContainer>
+        <div
+          className={NOTE_CONTENT}
+          dangerouslySetInnerHTML={{ __html: body }}
+        />
       </PageContainer>
       <PageSeparator />
       <Footer />

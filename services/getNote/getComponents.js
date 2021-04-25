@@ -1,14 +1,15 @@
-import Link from "@/components/Link"
 import PageSeparator from "@/components/PageSeparator"
 import Title from "@/components/Title"
-import Text from "@/components/Text"
+import Paragraph from "@/components/Paragraph"
 import SubTitle from "@/components/SubTitle"
 import Blockquote from "@/components/Blockquote"
+import Link from "@/components/Link"
+import NullComponent from "@/components/NullComponent"
 
+import UnorderedList from "./components/UnorderedList"
+import OrderedList from "./components/OrderedList"
 import Image from "./components/Image"
 import Iframe from "./components/Iframe"
-import Ul from "./components/Ul"
-import Ol from "./components/Ol"
 
 export default function getComponents() {
   /**
@@ -19,14 +20,14 @@ export default function getComponents() {
     h1: Title,
     h2: SubTitle,
     h3: SubTitle,
-    p: Text,
-    ul: Ul,
-    ol: Ol,
-    img: Image,
+    p: Paragraph,
+    ul: UnorderedList,
+    ol: OrderedList,
     blockquote: Blockquote,
-    a: Link.Minimal,
+    a: Link.Readable,
     br: PageSeparator,
-    hr: () => null,
+    hr: NullComponent,
     iframe: Iframe,
+    img: Image,
   }
 }

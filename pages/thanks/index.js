@@ -2,7 +2,7 @@ import Footer from "@/components/Footer"
 import Link from "@/components/Link"
 import PageContainer from "@/components/PageContainer"
 import Title from "@/components/Title"
-import Text from "@/components/Text"
+import Paragraph from "@/components/Paragraph"
 
 export default function ThanksPage() {
   return (
@@ -10,13 +10,13 @@ export default function ThanksPage() {
       <PageContainer>
         <div className="min-h-screen">
           <Title>Thank You!</Title>
-          <Text>
+          <Paragraph>
             Your message is on the way to my Inbox 😊.
             <br />
             <Link.Minimal href="/" target="_self">
               Go to Homepage
             </Link.Minimal>
-          </Text>
+          </Paragraph>
         </div>
       </PageContainer>
       <Footer />

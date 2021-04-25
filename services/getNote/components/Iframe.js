@@ -3,10 +3,14 @@ import IframeResize from "iframe-resizer-react"
 export default function Iframe({ src }) {
   return (
     <IframeResize
-      allowfullscreen
+      allowFullScreen
       src={src}
-      style={{ minHeight: "42rem" }}
-      className="bg-black w-full min-w-full my-16"
+      style={{
+        width: 1,
+        height: "16rem",
+        minWidth: "100%",
+      }}
+      className="bg-black my-16"
     />
   )
 }

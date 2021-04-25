@@ -1,9 +1,11 @@
-import ExternalLink from "@/components/ExternalLink"
-import locale from "date-fns/locale/es"
+import Link from "next/link"
+import RegularText from "@/components/RegularText"
+import Image from "@/components/Image"
 import { format } from "date-fns"
 import { useMemo } from "react"
 
 export default function Item({
+  title,
   description,
   presentedDate,
   preview,
@@ -11,37 +13,53 @@ export default function Item({
   url,
 }) {
   const dateRender = useMemo(() => {
-    return format(new Date(presentedDate), "MMMM dd, yyy", {
-      locale,
-    })
-  }, presentedDate)
+    return format(new Date(presentedDate), "MMMM dd, yyy")
+  }, [presentedDate])
 
   return (
     <div className="flex-shrink-0">
-      <div className="flex flex-wrap -space-x-px">
+      <div className="hidden lg:flex flex-wrap -space-x-px">
         {tags.map((tag) => {
-          return <div className="py-4 px-6 border uppercase">{tag}</div>
+          return (
+            <RegularText
+              key={`tag-${tag}`}
+              className="py-4 px-6 border uppercase"
+            >
+              {tag}
+            </RegularText>
+          )
         })}
       </div>
-      <ExternalLink
-        style={{
-          width: 640,
+      <Link
+        href={{
+          pathname: "/preview-pdf",
+          query: {
+            url,
+          },
         }}
-        href={url}
-        className="border -mt-px p-6 mb-6 block hover:opacity-90 hover:shadow-inner"
       >
-        <img
+        <a
+          target="_blank"
           style={{
-            height: 420,
+            width: 640,
           }}
-          src={preview}
-          alt=""
-          className="w-full object-cover"
-        />
-        <p className="text-xl p-8 text-center capitalize">
-          {description} ― {dateRender}
-        </p>
-      </ExternalLink>
+          className="max-w-xs lg:max-w-full border lg:-mt-px lg:p-6 mb-6 block hover:opacity-90 hover:shadow-inner"
+        >
+          <Image
+            style={{
+              height: 420,
+            }}
+            src={preview}
+            className="w-full max-h-56 lg:max-h-full object-cover"
+          />
+          <RegularText className="py-8 px-4 lg:px-0 mb-2 text-center capitalize">
+            <b className="uppercase lg:text-2xl">{title}</b>
+            <p className="mt-2 lg:px-2">
+              {description} ― {dateRender}
+            </p>
+          </RegularText>
+        </a>
+      </Link>
     </div>
   )
 }

@@ -4,8 +4,8 @@ import { MdDragHandle } from "react-icons/md"
 function getPosForEvent(e) {
   e.preventDefault()
   e.stopPropagation()
-  const { currentTarget, clientX } = e
-  const { offsetLeft } = currentTarget
+  const { clientX } = e.touches ? e.touches[0] : e
+  const { offsetLeft } = e.currentTarget
   return clientX - offsetLeft
 }
 
@@ -31,8 +31,9 @@ export default function Slider({
     (e) => {
       const { currentTarget } = e
       const { clientWidth } = currentTarget
-      const handleWidth = $handle.current.clientWidth
-      const pos = getPosForEvent(e) - handleWidth * 1.25
+      const handlerW = $handle.current.clientWidth
+      const handlerMultip = window.innerWidth < 800 ? 0.65 : 1.25
+      const pos = getPosForEvent(e) - handlerW * handlerMultip
       const multiplier = pos / clientWidth
       const gap = getMaxMinDifference()
       setPercentage(multiplier * 100)
@@ -71,8 +72,11 @@ export default function Slider({
       tabIndex="10"
       onBlur={stopSlider}
       onMouseLeave={stopSlider}
+      onTouchStart={startSlider}
+      onTouchEnd={stopSlider}
       onMouseMove={handleMouseMove}
-      className="relative outline-none w-full flex items-center h-24"
+      onTouchMove={handleMouseMove}
+      className="relative outline-none w-full flex items-center h-24 select-none"
     >
       <div
         onMouseDown={onDirectSelection}
@@ -85,6 +89,8 @@ export default function Slider({
       <div
         title="Yes, you can move this"
         ref={$handle}
+        onTouchStart={startSlider}
+        onTouchEnd={stopSlider}
         onMouseDown={startSlider}
         onMouseUp={stopSlider}
         style={{
