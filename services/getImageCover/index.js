@@ -2,19 +2,19 @@ import { createCanvas, loadImage, registerFont } from "canvas"
 import canvasTxt from "canvas-txt"
 const width = 1200
 const height = 630
-
 /**
  * Returns a Buffer for a providen text
  * @param { string } text - Text to generate cover for
  * @returns { Promise<Buffer> }
  */
 export default async function getImageCover(text = "") {
-  registerFont("./services/getImageCover/Poppins-Bold.ttf", {
+  const THIS_DIR = process.cwd() + "/services/getImageCover"
+  registerFont(`${THIS_DIR}/Poppins-Bold.ttf`, {
     family: "Poppins",
   })
   const canvas = createCanvas(width, height)
   const context = canvas.getContext("2d")
-  const image = await loadImage("./services/getImageCover/[note].png")
+  const image = await loadImage(`${THIS_DIR}/[note].png`)
   // Adds the default image background
   context.drawImage(image, 0, 0, width, height)
   canvasTxt.fontSize = 92
