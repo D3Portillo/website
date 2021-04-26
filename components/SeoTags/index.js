@@ -1,12 +1,14 @@
 import Head from "next/head"
-const DEFAULT_TITLE = "D3Portillo | Denny Portillo"
-const DEFAULT_DESCRIPTION = ""
+export const TITLE = "Denny Portillo | D3Portillo"
+const DESCRIPTION =
+  "Denny Portillo. I Love JavaScript and playing around with the Web Universe."
+const IMAGE = "https://d3portillo.me/seo/default.png"
 
 export default function SeoTags({
   url = "https://d3portillo.me",
-  title = DEFAULT_TITLE,
-  image,
-  description = DEFAULT_DESCRIPTION,
+  title = TITLE,
+  image = IMAGE,
+  description = DESCRIPTION,
 }) {
   return (
     <Head>
@@ -30,8 +32,6 @@ export default function SeoTags({
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="d3portillo" />
       <meta name="twitter:creator" content="d3portillo" />
-
-      <link rel="canonical" href="https://d3portillo.me" />
     </Head>
   )
 }

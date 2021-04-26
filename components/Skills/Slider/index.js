@@ -69,7 +69,7 @@ export default function Slider({
 
   return (
     <div
-      tabIndex="10"
+      tabIndex="0"
       onBlur={stopSlider}
       onMouseLeave={stopSlider}
       onTouchStart={startSlider}

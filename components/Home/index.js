@@ -11,6 +11,7 @@ export default function Home() {
           className="group cursor-pointer select-none outline-none"
         >
           <img
+            alt="It's me"
             style={{
               minWidth,
             }}
@@ -18,11 +19,13 @@ export default function Home() {
             className="w-full max-w-lg hidden group-focus:hidden group-hover:block"
           />
           <img
+            alt="It's me"
             style={{ minWidth }}
             src="/me/default.png"
             className="w-full max-w-lg group-hover:hidden group-focus:hidden"
           />
           <img
+            alt="It's me"
             style={{ minWidth }}
             src="/me/out.png"
             className="w-full max-w-lg hidden group-focus:block"

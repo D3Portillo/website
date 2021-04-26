@@ -10,6 +10,7 @@ export default function Image({
     <img
       hidden={hidden}
       className={_className}
+      loading="lazy"
       style={style}
       src={src}
       alt={alt}

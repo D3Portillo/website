@@ -1,14 +1,17 @@
 import TopNavigation from "@/components/TopNavigation"
+import NullComponent from "@/components/NullComponent"
 import { useMemo } from "react"
 
 export default function PageContainer({
   children = null,
   withNavigation = false,
   isFull = false,
+  hidden = false,
 }) {
   const Navigation = useMemo(() => {
-    return withNavigation ? TopNavigation : () => null
+    return withNavigation ? TopNavigation : NullComponent
   }, [withNavigation])
+
   const className = useMemo(() => {
     const FULL_WIDTH = "lg:-mx-10"
     if (isFull && withNavigation) {
@@ -16,10 +19,13 @@ export default function PageContainer({
     }
     return isFull ? FULL_WIDTH : "px-10"
   }, [isFull, withNavigation])
+
   return (
     <>
       <Navigation />
-      <div className={className}>{children}</div>
+      <div hidden={hidden} className={className}>
+        {children}
+      </div>
     </>
   )
 }

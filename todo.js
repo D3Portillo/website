@@ -6,6 +6,7 @@
  * * SEO
  * * Mejorar/Pulir las Notas
  * * CV in PDF
+ * // * Autogenerates notes cover
  * // * PDF Preview for slides
  * // * Image Optimization
  * // * Mobile version
