@@ -1,21 +1,22 @@
+const { loadImage, createCanvas, registerFont } = require("canvas")
 const canvasTxt = require("canvas-txt").default
 const width = 1200
 const height = 630
 
 /**
- * Returns a Buffer for a providen text
- * @param { string } text - Text to generate cover for
- * @returns { Promise<Buffer> }
+ * Prints a base64 cover on console
+ * @description
+ * Usage: node makeCover "your text"
  */
-async function getImageCover(text = "") {
-  const Canvas = require("canvas")
+async function init() {
+  const { 2: text } = process.argv
   const THIS_DIR = process.cwd() + "/services/getImageCover"
-  Canvas.registerFont(`${THIS_DIR}/Poppins-Bold.ttf`, {
+  registerFont(`${THIS_DIR}/Poppins-Bold.ttf`, {
     family: "Poppins",
   })
-  const canvas = Canvas.createCanvas(width, height)
+  const canvas = createCanvas(width, height)
   const context = canvas.getContext("2d")
-  const image = await Canvas.loadImage(`${THIS_DIR}/[note].png`)
+  const image = await loadImage(`${THIS_DIR}/[note].png`)
   // Adds the default image background
   context.drawImage(image, 0, 0, width, height)
   canvasTxt.fontSize = 92
@@ -24,7 +25,8 @@ async function getImageCover(text = "") {
   canvasTxt.font = "Poppins"
   canvasTxt.lineHeight = 92
   canvasTxt.drawText(context, text, 120, 104, 960, 351)
-  return canvas.toBuffer("image/png")
+  const base64 = canvas.toDataURL().replace("data:image/png;base64,", "")
+  process.stdout.write(base64)
 }
 
-getImageCover()
+init()

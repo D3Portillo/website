@@ -48,10 +48,10 @@ export default function NotePage({ note = Note }) {
 
 export async function getStaticProps({ params }) {
   const note = await getNote(params.note)
-  const { cover, path } = note
+  const { cover, path, title } = note
   let seoImage = cover
   if (!cover) {
-    const coverBuffer = await getImageCover()
+    const coverBuffer = await getImageCover(title)
     seoImage = await addBufferToPublic({
       path: `/notes/${path}.png`,
       content: coverBuffer,
