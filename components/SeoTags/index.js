@@ -1,11 +1,13 @@
 import Head from "next/head"
+import getDomain from "@/services/getDomain"
 export const TITLE = "Denny Portillo | D3Portillo"
 const DESCRIPTION =
   "Denny Portillo. I Love JavaScript and playing around with the Web Universe."
-const IMAGE = "https://d3portillo.me/seo/default.png"
+const IMAGE = getDomain("/seo/default.png")
+const DEFAULT_URL = getDomain()
 
 export default function SeoTags({
-  url = "https://d3portillo.me",
+  url = DEFAULT_URL,
   title = TITLE,
   image = IMAGE,
   description = DESCRIPTION,

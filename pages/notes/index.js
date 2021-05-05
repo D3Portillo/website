@@ -4,9 +4,11 @@ import ContactForm from "@/components/ContactForm"
 import Notes from "@/components/Notes"
 import PageContainer from "@/components/PageContainer"
 import SeoTags from "@/components/SeoTags"
-const IMAGE = "https://d3portillo.me/seo/notes.png"
+import getDomain from "@/services/getDomain"
+const IMAGE = getDomain("/seo/notes.png")
 const DESCRIPTION =
   "Estas son notas que hago y comparto con ustedes y NO, no es un Blog. A veces su contenido es en inglés."
+
 /**
  * @param {{ notes: Note[] }} props
  */
@@ -17,7 +19,7 @@ export default function NotesPage({ notes = [] }) {
         title="Denny Portillo | Notes"
         description={DESCRIPTION}
         image={IMAGE}
-        url="https://d3portillo.me/notes"
+        url={getDomain("/notes")}
       />
       <PageContainer isFull withNavigation>
         <Notes notes={notes} />

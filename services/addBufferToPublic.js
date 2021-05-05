@@ -4,7 +4,8 @@ const GENERATED_CONTENT = "GENERATED_CONTENT"
 
 /**
  * Adds content to `public` folder and returns remote path
- * without hostname :: Add extension, item.png
+ * without hostname. PD: if content is a file do please
+ * provide the extension, ex: item.png
  * @param {{ path: string, content: Buffer }} prop
  */
 export default async function addBufferToPublic({ path = "/", content = "" }) {

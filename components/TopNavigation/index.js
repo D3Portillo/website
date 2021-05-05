@@ -4,6 +4,7 @@ import Image from "@/components/Image"
 import { FiTwitter } from "react-icons/fi"
 import { FORM_ID } from "@/components/ContactForm"
 import { useRouter } from "next/router"
+import getDomain from "@/services/getDomain"
 
 function NavigationLink({ href, children = null }) {
   return (
@@ -15,7 +16,7 @@ function NavigationLink({ href, children = null }) {
 
 function useTwitterURL() {
   const { asPath } = useRouter()
-  const siteBase = "https://d3portillo.me"
+  const siteBase = getDomain()
   const fullPath = `${siteBase}${asPath}`
   const twitterBase = "https://twitter.com/intent/tweet"
   return `${twitterBase}?text=Check%20this%20out!&url=${fullPath}&via=d3portillo`

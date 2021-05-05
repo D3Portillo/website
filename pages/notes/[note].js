@@ -11,12 +11,13 @@ import Image from "@/components/Image"
 import SeoTags from "@/components/SeoTags"
 import { useEffect } from "react"
 import MoreNotesBAnner from "@/components/MoreNotesBanner"
+import getDomain from "@/services/getDomain"
 const NOTE_CONTENT = "NOTE_CONTENT"
 const addZoom = () => mediumZoom(`.${NOTE_CONTENT} img`)
 
 export default function NotePage({ note = Note }) {
   const { body, cover, description, title, path, seoImage } = note
-  const fullPath = `https://d3portillo.me/notes/${path}`
+  const fullPath = getDomain(`/notes/${path}`)
   const fullTitle = `Notes | ${title}`
   const CoverSeparator = cover ? PageSeparator : NullComponent
   useEffect(addZoom, [])
@@ -52,10 +53,12 @@ export async function getStaticProps({ params }) {
   let seoImage = cover
   if (!cover) {
     const coverBuffer = await getImageCover(title)
-    seoImage = await addBufferToPublic({
-      path: `/notes/${path}.png`,
-      content: coverBuffer,
-    })
+    seoImage = getDomain(
+      await addBufferToPublic({
+        path: `/notes/${path}.png`,
+        content: coverBuffer,
+      })
+    )
   }
   return {
     props: { note: { ...note, seoImage } },
