@@ -5,6 +5,12 @@ import Note from "./Note"
 import styled from "styled-components"
 import { screens } from "tailwindcss/defaultTheme"
 
+const HeroItem = styled.div`
+  .hidden {
+    display: none;
+  }
+`
+
 const Grid = styled.div`
   @media (min-width: ${screens.lg}) {
     column-count: 2;
@@ -36,7 +42,7 @@ export default function Notes({ notes = [] }) {
 
   return (
     <>
-      {$notes.first}
+      <HeroItem>{$notes.first}</HeroItem>
       <Grid>{$notes.rest}</Grid>
     </>
   )

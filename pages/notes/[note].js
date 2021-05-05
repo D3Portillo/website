@@ -10,6 +10,7 @@ import NullComponent from "@/components/NullComponent"
 import Image from "@/components/Image"
 import SeoTags from "@/components/SeoTags"
 import { useEffect } from "react"
+import MoreNotesBAnner from "@/components/MoreNotesBanner"
 const NOTE_CONTENT = "NOTE_CONTENT"
 const addZoom = () => mediumZoom(`.${NOTE_CONTENT} img`)
 
@@ -27,16 +28,18 @@ export default function NotePage({ note = Note }) {
         image={seoImage}
         url={fullPath}
       />
-      <PageContainer withNavigation hidden={!cover}>
+      <PageContainer isFull withNavigation hidden={!cover}>
         <Image src={cover} className="w-full" />
       </PageContainer>
       <CoverSeparator />
       <PageContainer>
         <div
-          className={NOTE_CONTENT}
+          className={`${NOTE_CONTENT} max-w-6xl mx-auto`}
           dangerouslySetInnerHTML={{ __html: body }}
         />
       </PageContainer>
+      <PageSeparator />
+      <MoreNotesBAnner />
       <PageSeparator />
       <Footer />
     </>

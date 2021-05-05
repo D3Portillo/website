@@ -5,7 +5,7 @@ export default function Image({
   className = "",
   hidden,
 }) {
-  const _className = `flex shadow-inner lg:bg-black lg:text-white italic text-lg items-center justify-center object-cover ${className}`
+  const _className = `flex bg-gray-50 italic text-lg items-center justify-center object-cover ${className}`
   return (
     <img
       hidden={hidden}

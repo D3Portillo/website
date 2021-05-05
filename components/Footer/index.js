@@ -18,18 +18,18 @@ function LinkTo({ children = null, href, title }) {
 export default function Footer() {
   return (
     <PageContainer isFull>
-      <footer className="bg-black text-xl p-10 lg:p-20 pt-32 text-white flex flex-wrap-reverse">
+      <footer className="bg-black text-xl p-10 lg:px-20 pt-36 text-white flex flex-wrap-reverse">
         <div className="flex-grow flex flex-col justify-end w-full lg:w-auto">
           <div className="flex space-x-2 items-end">
             <ExternalLink
-              title="My Twitter"
+              title="Denny's Twitter"
               className="transform hover:scale-105"
               href="https://twitter.com/d3portillo"
             >
               <GrTwitter className="text-white text-2xl" />
             </ExternalLink>
             <ExternalLink
-              title="My PosserGram"
+              title="My Instagram"
               className="transform hover:scale-105"
               href="https://instagram.com/d3portillo.me"
             >
@@ -55,7 +55,7 @@ export default function Footer() {
             ・2021
           </div>
         </div>
-        <div className="flex flex-col mb-6 pb-12 lg:mb-0 lg:pb-0 border-b lg:border-none">
+        <div className="flex w-full lg:w-auto flex-col lg:items-end mb-6 pb-12 lg:mb-0 lg:pb-0 border-b lg:border-none">
           <LinkTo href="/notes" title="A 'Blog' of Web things">
             My Notes
           </LinkTo>

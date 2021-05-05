@@ -50,7 +50,7 @@ export default function Item({
               height: 420,
             }}
             src={preview}
-            className="w-full max-h-56 lg:max-h-full object-cover"
+            className="w-full max-h-56 lg:max-h-full"
           />
           <RegularText className="py-8 px-4 lg:px-0 mb-2 text-center capitalize">
             <b className="uppercase lg:text-2xl">{title}</b>

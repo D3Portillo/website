@@ -12,7 +12,7 @@ export default function Item({ description = "", url, cover = "", name = "" }) {
     >
       <Image
         style={{ height: "26rem" }}
-        className="w-full max-h-64 lg:max-h-full object-cover bg-black hover:opacity-95"
+        className="w-full max-h-64 lg:max-h-full hover:opacity-95"
         src={cover}
       />
       <div className="py-6 px-4 lg:opacity-0 group-hover:opacity-100 transition-all duration-200 transform group-hover:translate-y-2">

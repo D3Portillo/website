@@ -5,6 +5,10 @@ export default function DefaultPageLayout({ children = null }) {
   return (
     <div className="text-xl pt-10 lg:px-10 lg:text-4xl pb-0">
       <Head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+        />
         <title>{TITLE}</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.ico" />

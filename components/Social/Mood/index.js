@@ -38,8 +38,8 @@ export default function Mood() {
         </div>
         <div className="relative p-3">
           <Image
-            style={{ minHeight: "8rem" }}
-            className="object-cover w-full h-full text-white"
+            style={{ minHeight: "8rem", backgroundColor: "black" }}
+            className="w-full h-full text-white"
             src={song.cover}
             alt="This might be loading, it's spotify fault!"
           />
