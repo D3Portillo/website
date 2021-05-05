@@ -3,9 +3,9 @@
  * // * Paragraph Component with sizes
  * // * Layout components
  * * Image Container bug
- * * SEO
+ * // * SEO
  * * Mejorar/Pulir las Notas
- * * CV in PDF
+ * // * CV in PDF
  * // * Autogenerates notes cover
  * // * PDF Preview for slides
  * // * Image Optimization

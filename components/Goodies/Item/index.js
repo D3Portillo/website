@@ -1,8 +1,8 @@
-import Link from "next/link"
 import RegularText from "@/components/RegularText"
 import Image from "@/components/Image"
 import { format } from "date-fns"
 import { useMemo } from "react"
+import PreviewPDF from "@/components/PreviewPDF"
 
 export default function Item({
   title,
@@ -30,14 +30,7 @@ export default function Item({
           )
         })}
       </div>
-      <Link
-        href={{
-          pathname: "/preview-pdf",
-          query: {
-            url,
-          },
-        }}
-      >
+      <PreviewPDF url={url}>
         <a
           target="_blank"
           style={{
@@ -59,7 +52,7 @@ export default function Item({
             </p>
           </RegularText>
         </a>
-      </Link>
+      </PreviewPDF>
     </div>
   )
 }

@@ -1,7 +1,8 @@
 import Title from "@/components/Title"
 import ExternalLink from "@/components/ExternalLink"
+import PreviewPDF from "@/components/PreviewPDF"
 
-export default function Moar() {
+export default function Moar({ cvURL = "" }) {
   return (
     <>
       <Title>MOAR</Title>
@@ -20,12 +21,14 @@ export default function Moar() {
         >
           <img src="/svg/goodies.svg" />
         </ExternalLink>
-        <ExternalLink
-          title="Wanna see my CV?"
-          className="shadow rounded hover:shadow-lg cursor-pointer"
-        >
-          <img src="/svg/vitae.svg" />
-        </ExternalLink>
+        <PreviewPDF url={cvURL}>
+          <ExternalLink
+            title="Wanna see my CV?"
+            className="shadow rounded hover:shadow-lg cursor-pointer"
+          >
+            <img src="/svg/vitae.svg" />
+          </ExternalLink>
+        </PreviewPDF>
       </div>
     </>
   )

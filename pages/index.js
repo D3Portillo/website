@@ -1,4 +1,3 @@
-import Head from "next/head"
 import Home from "@/components/Home"
 import Bio from "@/components/Bio"
 import PageSeparator from "@/components/PageSeparator"
@@ -11,8 +10,10 @@ import Footer from "@/components/Footer"
 import getShowcaseItems from "@/services/getShowcaseItems"
 import PageContainer from "@/components/PageContainer"
 import SeoTags from "@/components/SeoTags"
+import getCV from "@/services/getCV"
 
-export default function HomePage({ showcaseItems = [] }) {
+export default function HomePage({ showcaseItems = [], cvURL = "" }) {
+  console.log({ cvURL })
   return (
     <>
       <SeoTags />
@@ -27,7 +28,7 @@ export default function HomePage({ showcaseItems = [] }) {
         <PageSeparator />
         <Social />
         <PageSeparator />
-        <Moar />
+        <Moar cvURL={cvURL} />
         <PageSeparator />
       </PageContainer>
       <ContactForm />
@@ -38,9 +39,11 @@ export default function HomePage({ showcaseItems = [] }) {
 
 export async function getStaticProps() {
   const showcaseItems = await getShowcaseItems()
+  const cvURL = await getCV()
   return {
     props: {
       showcaseItems,
+      cvURL,
       revalidate: 5,
     },
   }
