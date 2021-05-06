@@ -5,11 +5,11 @@ function EagerlyLoadMe({ src = "", className = "" }) {
   return (
     <img
       loading="eager"
-      alt="It's me"
+      alt="👽"
       width={580}
       height={580}
       style={{
-        minWidth: 520,
+        minWidth: `clamp(240,50vw,580)`,
       }}
       src={src}
       className={`max-w-lg w-full ${className}`}
@@ -20,7 +20,7 @@ function EagerlyLoadMe({ src = "", className = "" }) {
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col-reverse lg:flex-row">
-      <div className="flex-grow flex items-end justify-end lg:justify-start">
+      <div className="flex-grow flex items-end">
         <div
           tabIndex="0"
           className="group relative cursor-pointer select-none outline-none"

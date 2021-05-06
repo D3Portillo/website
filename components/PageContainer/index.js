@@ -3,6 +3,9 @@ import dynamic from "next/dynamic"
 import { useMemo } from "react"
 const TopNavigation = dynamic(() => import("@/components/TopNavigation"), {
   ssr: false,
+  loading: () => {
+    return <div className="h-32 bg-white w-full" />
+  },
 })
 
 export default function PageContainer({
