@@ -25,6 +25,7 @@ export default function Item({
         <StyledNextImage
           width={600}
           height={400}
+          alt="..."
           layout="responsive"
           className="bg-cover w-full max-h-64 lg:max-h-full hover:opacity-95"
           src={cover}
