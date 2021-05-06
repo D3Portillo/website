@@ -1,6 +1,6 @@
 import { FORM_ID } from "@/components/ContactForm"
 import Link from "@/components/Link"
-
+import meAsBase64 from "./constants/meAsBase64"
 function EagerlyLoadMe({ src = "", className = "" }) {
   return (
     <img
@@ -27,7 +27,7 @@ export default function Home() {
         >
           <EagerlyLoadMe
             className="group-hover:invisible group-focus:invisible"
-            src="/me/default.webp"
+            src={meAsBase64}
           />
           <EagerlyLoadMe
             src="/me/hover.webp"
