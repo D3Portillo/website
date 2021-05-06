@@ -1,6 +1,9 @@
-import TopNavigation from "@/components/TopNavigation"
 import NullComponent from "@/components/NullComponent"
+import dynamic from "next/dynamic"
 import { useMemo } from "react"
+const TopNavigation = dynamic(() => import("@/components/TopNavigation"), {
+  ssr: false,
+})
 
 export default function PageContainer({
   children = null,

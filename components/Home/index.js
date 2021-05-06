@@ -6,6 +6,8 @@ function EagerlyLoadMe({ src = "", className = "" }) {
     <img
       loading="eager"
       alt="It's me"
+      width={580}
+      height={580}
       style={{
         minWidth: 520,
       }}

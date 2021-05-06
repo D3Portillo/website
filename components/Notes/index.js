@@ -31,6 +31,7 @@ export default function Notes({ notes = [] }) {
       const date = format(new Date(created_at), "MMMM dd.yy")
       return (
         <Note
+          key={created_at + title}
           created={date}
           description={description}
           cover={cover}

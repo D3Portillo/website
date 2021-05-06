@@ -12,21 +12,31 @@ export default function Moar({ cvURL = "" }) {
           href="/cards"
           className="shadow rounded hover:shadow-lg cursor-pointer"
         >
-          <img src="/svg/card.svg" />
+          <img
+            alt="A presentation card icon"
+            width={280}
+            height={260}
+            src="/svg/card.svg"
+          />
         </ExternalLink>
         <ExternalLink
           title="Take a look of some of my talk slides"
           href="/goodies"
           className="shadow rounded hover:shadow-lg cursor-pointer"
         >
-          <img src="/svg/goodies.svg" />
+          <img alt="A pinata" width={280} height={260} src="/svg/goodies.svg" />
         </ExternalLink>
         <PreviewPDF url={cvURL}>
           <ExternalLink
             title="Wanna see my CV?"
             className="shadow rounded hover:shadow-lg cursor-pointer"
           >
-            <img src="/svg/vitae.svg" />
+            <img
+              alt="A CV Icon"
+              width={280}
+              height={260}
+              src="/svg/vitae.svg"
+            />
           </ExternalLink>
         </PreviewPDF>
       </div>

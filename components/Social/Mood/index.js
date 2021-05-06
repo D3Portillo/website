@@ -38,6 +38,8 @@ export default function Mood() {
         </div>
         <div className="relative p-3">
           <Image
+            width={640}
+            height={640}
             loading="eager"
             style={{ minHeight: "8rem", backgroundColor: "black" }}
             className="w-full h-full text-white"
