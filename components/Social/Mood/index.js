@@ -42,9 +42,9 @@ export default function Mood() {
             height={640}
             loading="eager"
             style={{ minHeight: "8rem", backgroundColor: "black" }}
-            className="w-full h-full text-white"
+            className="w-full text-white"
             src={song.cover}
-            alt="This might be loading, it's spotify fault!"
+            alt="This stuff is loading and it's spotify fault :("
           />
           <div
             onClick={playSong}
