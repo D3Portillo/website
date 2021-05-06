@@ -5,6 +5,10 @@
  * * Image Container bug
  * // * SEO
  * * Mejorar/Pulir las Notas
+ * * Add Disqus
+ * * Last Mobile update
+ * * services => helpers
+ * * add /hooks
  * // * CV in PDF
  * // * Autogenerates notes cover
  * // * PDF Preview for slides

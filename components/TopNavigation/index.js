@@ -4,7 +4,8 @@ import Image from "@/components/Image"
 import { FiTwitter } from "react-icons/fi"
 import { FORM_ID } from "@/components/ContactForm"
 import { useRouter } from "next/router"
-import getDomain from "@/services/getDomain"
+import getDomain from "@/helpers/getDomain"
+import meAsB64 from "./constants/meAsB64"
 
 function NavigationLink({ href, children = null }) {
   return (
@@ -30,7 +31,7 @@ export default function TopNavigation() {
         <a title="It's me, click it!" href="/">
           <Image
             className="h-16 w-16 lg:h-14 lg:w-14 rounded-full filter saturate-200 contrast-100 hover:filter-none"
-            src="/home.png"
+            src={meAsB64}
           />
         </a>
         <RegularText className="hidden lg:flex space-x-6">

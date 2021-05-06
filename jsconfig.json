@@ -3,10 +3,11 @@
     "baseUrl": "./",
     "paths": {
       "@/components/*": ["./components/*"],
+      "@/constants/*": ["./constants/*"],
       "@/layouts/*": ["./layouts/*"],
       "@/public/*": ["./public/*"],
       "@/pages/*": ["./pages/*"],
-      "@/services/*": ["./services/*"],
+      "@/helpers/*": ["./helpers/*"],
       "@/root/*": ["./*"]
     }
   }

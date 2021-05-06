@@ -1,6 +1,19 @@
 import { FORM_ID } from "@/components/ContactForm"
 import Link from "@/components/Link"
-const minWidth = 520
+
+function EagerlyLoadMe({ src = "", className = "" }) {
+  return (
+    <img
+      loading="eager"
+      alt="It's me"
+      style={{
+        minWidth: 520,
+      }}
+      src={src}
+      className={`max-w-lg w-full ${className}`}
+    />
+  )
+}
 
 export default function Home() {
   return (
@@ -8,30 +21,19 @@ export default function Home() {
       <div className="flex-grow flex items-end justify-end lg:justify-start">
         <div
           tabIndex="0"
-          className="group cursor-pointer select-none outline-none"
+          className="group relative cursor-pointer select-none outline-none"
         >
-          <img
-            loading="eager"
-            alt="It's me"
-            style={{
-              minWidth,
-            }}
-            src="/me/hover.png"
-            className="w-full max-w-lg hidden group-focus:hidden group-hover:block"
+          <EagerlyLoadMe
+            className="group-hover:invisible group-focus:invisible"
+            src="/me/default.webp"
           />
-          <img
-            loading="eager"
-            alt="It's me"
-            style={{ minWidth }}
-            src="/me/default.png"
-            className="w-full max-w-lg group-hover:hidden group-focus:hidden"
+          <EagerlyLoadMe
+            src="/me/hover.webp"
+            className="absolute z-10 top-0 left-0 invisible group-focus:invisible group-hover:visible"
           />
-          <img
-            loading="eager"
-            alt="It's me"
-            style={{ minWidth }}
-            src="/me/out.png"
-            className="w-full max-w-lg hidden group-focus:block"
+          <EagerlyLoadMe
+            src="/me/out.webp"
+            className="absolute z-20 top-0 left-0 invisible group-focus:visible"
           />
         </div>
       </div>

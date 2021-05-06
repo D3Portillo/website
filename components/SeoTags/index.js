@@ -1,5 +1,5 @@
 import Head from "next/head"
-import getDomain from "@/services/getDomain"
+import getDomain from "@/helpers/getDomain"
 export const TITLE = "Denny Portillo | D3Portillo"
 const DESCRIPTION =
   "Denny Portillo. I Love JavaScript and playing around with the Web Universe."

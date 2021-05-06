@@ -1,18 +1,15 @@
-const Airtable = require("airtable")
-const base = new Airtable({
-  apiKey: process.env.AIRTABLE_API_KEY,
-}).base(process.env.AIRTABLE_BASE_ID)
-const table = base("Showcase")
+import getTableRecords from "@/helpers/getTableRecords"
 
 export default async function getShowcaseItems() {
-  const allRecords = await table.select({}).all()
+  const allRecords = await getTableRecords("Showcase")
   return allRecords.map(({ id, fields }) => {
     const { description, cover, url, name } = fields
     const { small, large } = cover[0].thumbnails
     return {
       name,
       id,
-      cover: large.url || small.url,
+      cover: large.url,
+      coverPlaceholder: small.url,
       description,
       url,
     }

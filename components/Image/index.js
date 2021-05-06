@@ -1,19 +1,28 @@
 export default function Image({
+  width,
+  height,
+  loading = "lazy",
+  placeholder,
   src,
   alt = "LOADING...",
-  style,
+  style = {},
   className = "",
   hidden,
 }) {
-  const _className = `flex bg-gray-50 italic text-lg items-center justify-center object-cover ${className}`
+  const _className = `flex text-center bg-cover bg-gray-50 italic text-lg items-center justify-center object-cover ${className}`
+  const _style = placeholder
+    ? { ...style, backgroundImage: `url(${placeholder})` }
+    : style
   return (
     <img
+      width={width}
+      height={height}
       hidden={hidden}
       className={_className}
-      loading="lazy"
-      style={style}
+      loading={loading}
+      style={_style}
       src={src}
-      alt={alt}
+      alt={placeholder ? "" : alt}
     />
   )
 }

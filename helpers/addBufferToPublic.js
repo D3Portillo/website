@@ -2,6 +2,7 @@ import { mkdirSync, writeFileSync } from "fs"
 import { dirname } from "path"
 const GENERATED_CONTENT = "GENERATED_CONTENT"
 
+// * Rename to => addBufferToFS
 /**
  * Adds content to `public` folder and returns remote path
  * without hostname. PD: if content is a file do please

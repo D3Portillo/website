@@ -7,13 +7,12 @@ import Social from "@/components/Social"
 import Moar from "@/components/Moar"
 import ContactForm from "@/components/ContactForm"
 import Footer from "@/components/Footer"
-import getShowcaseItems from "@/services/getShowcaseItems"
+import getShowcaseItems from "@/helpers/getShowcaseItems"
 import PageContainer from "@/components/PageContainer"
 import SeoTags from "@/components/SeoTags"
-import getCV from "@/services/getCV"
+import getCV from "@/helpers/getCV"
 
 export default function HomePage({ showcaseItems = [], cvURL = "" }) {
-  console.log({ cvURL })
   return (
     <>
       <SeoTags />

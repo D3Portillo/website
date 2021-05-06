@@ -1,8 +1,5 @@
-const Airtable = require("airtable")
-const base = new Airtable({
-  apiKey: process.env.AIRTABLE_API_KEY,
-}).base(process.env.AIRTABLE_BASE_ID)
-const table = base("Documents")
+import getTableRecords from "@/helpers/getTableRecords"
+
 export const AirtableDocument = {
   id: String,
   name: String,
@@ -14,7 +11,7 @@ export const AirtableDocument = {
  * @returns { Promise<AirtableDocument?> }
  */
 export default async function getDocument(documentType = "") {
-  const allRecords = await table.select({}).all()
+  const allRecords = await getTableRecords("Documents")
   const document = allRecords.find(({ fields: { name } }) => {
     return name === documentType
   })

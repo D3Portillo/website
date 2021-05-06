@@ -1,19 +1,21 @@
 import { useRef, useState } from "react"
 import { ArrowRight, ArrowLeft } from "@/components/Icons"
-import { screens } from "tailwindcss/defaultTheme"
 import styled from "styled-components"
 import getArrowHandler from "./helpers/getArrowHandler"
+import onMedia from "@/constants/onMedia"
+
 const Left = getArrowHandler(ArrowLeft, "transform left-0", {
   transform: "translateX(-50%)",
 })
 const Right = getArrowHandler(ArrowRight, "transform right-0", {
   transform: "translateX(50%)",
 })
+
 const ItemContainer = styled.div`
   &:hover .arrow {
     visibility: visible;
   }
-  @media (min-width: ${screens.lg}) {
+  ${onMedia.lg} {
     .arrow {
       visibility: hidden;
     }
@@ -45,7 +47,7 @@ export default function ItemsGallery({ children = null }) {
   const scrollRightHandler = scrollTo(getContainer)
   function handleScroll(/** @type { UIEvent } */ e) {
     // Spacing that triggers left or right arrows to be hidden
-    const gap = 50
+    const gap = 42
     let newShowArrows = { left: false, right: false }
     const { scrollWidth, scrollLeft, clientWidth } = e.currentTarget
     const maxScroll = scrollWidth - clientWidth
@@ -70,6 +72,7 @@ export default function ItemsGallery({ children = null }) {
         className="flex space-x-10 overflow-y-hidden overflow-x-auto"
       >
         {children}
+        <div style={{ minWidth: "clamp(1rem, 2vw, 4rem)" }} />
       </div>
       <Right onClick={scrollRightHandler} hidden={!showArrows.right} />
     </ItemContainer>

@@ -6,11 +6,12 @@ import ItemsGallery from "@/components/ItemsGallery"
 export default function Showcase({ items = [] }) {
   const itemsRender = useMemo(() => {
     return items.map((item) => {
-      const { id, cover, name, description, url } = item
+      const { id, cover, name, description, url, coverPlaceholder } = item
       return (
         <Item
           key={id}
           cover={cover}
+          coverPlaceholder={coverPlaceholder}
           name={name}
           description={description}
           url={url}

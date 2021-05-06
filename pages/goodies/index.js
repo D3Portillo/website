@@ -1,10 +1,10 @@
 import Goodies from "@/components/Goodies"
-import getGoodies from "@/services/getGoodies"
+import getGoodies from "@/helpers/getGoodies"
 import Footer from "@/components/Footer"
 import PageSeparator from "@/components/PageSeparator"
 import PageContainer from "@/components/PageContainer"
 import SeoTags from "@/components/SeoTags"
-import getDomain from "@/services/getDomain"
+import getDomain from "@/helpers/getDomain"
 
 export default function GoodiesPage({ goodies = [] }) {
   return (

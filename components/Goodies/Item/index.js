@@ -32,11 +32,12 @@ export default function Item({
       </div>
       <PreviewPDF url={url}>
         <a
+          title="Tap to open"
           target="_blank"
           style={{
             width: 640,
           }}
-          className="max-w-xs lg:max-w-full border lg:-mt-px lg:p-6 mb-6 block hover:opacity-90 hover:shadow-inner"
+          className="max-w-xs lg:max-w-full border lg:-mt-px lg:p-6 mb-6 block"
         >
           <Image
             style={{

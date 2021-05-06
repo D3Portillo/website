@@ -1,10 +1,9 @@
-import getDocument from "@/services/getDocument"
+import getDocument from "@/helpers/getDocument"
 
 /**
  * Returns url of my CV from Airtable
  * @returns { Promise<string> }
  */
 export default async function getCV() {
-  const cv = await getDocument("CV")
-  return cv?.url
+  return (await getDocument("CV"))?.url
 }

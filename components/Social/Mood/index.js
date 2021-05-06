@@ -14,7 +14,7 @@ export default function Mood() {
   const [song, setSong] = useState(spotify)
 
   useEffect(() => {
-    fetch("/api/spotify")
+    fetch("/api/random_spotify_song")
       .then((r) => r.json())
       .then(setSong)
   }, [])
@@ -38,6 +38,7 @@ export default function Mood() {
         </div>
         <div className="relative p-3">
           <Image
+            loading="eager"
             style={{ minHeight: "8rem", backgroundColor: "black" }}
             className="w-full h-full text-white"
             src={song.cover}

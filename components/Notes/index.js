@@ -1,18 +1,21 @@
 import { useMemo } from "react"
-import { Note as NoteType } from "@/services/getNotes"
+import { Note as NoteType } from "@/helpers/getNotes"
 import { format } from "date-fns"
 import Note from "./Note"
 import styled from "styled-components"
-import { screens } from "tailwindcss/defaultTheme"
+import onMedia from "@/constants/onMedia"
 
 const HeroItem = styled.div`
-  .hidden {
-    display: none;
+  ${onMedia.lg} {
+    .hidden {
+      display: none;
+      opacity: 0;
+    }
   }
 `
 
 const Grid = styled.div`
-  @media (min-width: ${screens.lg}) {
+  ${onMedia.lg} {
     column-count: 2;
     column-gap: 0;
   }
@@ -41,9 +44,9 @@ export default function Notes({ notes = [] }) {
   })
 
   return (
-    <>
+    <div className="lg:-mx-px">
       <HeroItem>{$notes.first}</HeroItem>
       <Grid>{$notes.rest}</Grid>
-    </>
+    </div>
   )
 }

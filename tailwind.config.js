@@ -24,6 +24,7 @@ module.exports = {
       translate: ["group-hover"],
       display: ["group-hover", "group-focus"],
       filter: ["hover", "group-hover"],
+      visibility: ["group-hover", "group-focus"],
     },
   },
   plugins: [],

@@ -1,7 +1,7 @@
-import getNote from "@/services/getNote"
-import getNotes, { Note } from "@/services/getNotes"
-import getImageCover from "@/services/getImageCover"
-import addBufferToPublic from "@/services/addBufferToPublic"
+import getNote from "@/root/helpers/getNote"
+import getNotes, { Note } from "@/root/helpers/getNotes"
+import getImageCover from "@/root/helpers/getImageCover"
+import addBufferToPublic from "@/root/helpers/addBufferToPublic"
 import Footer from "@/components/Footer"
 import PageSeparator from "@/components/PageSeparator"
 import PageContainer from "@/components/PageContainer"
@@ -11,7 +11,7 @@ import Image from "@/components/Image"
 import SeoTags from "@/components/SeoTags"
 import { useEffect } from "react"
 import MoreNotesBAnner from "@/components/MoreNotesBanner"
-import getDomain from "@/services/getDomain"
+import getDomain from "@/helpers/getDomain"
 const NOTE_CONTENT = "NOTE_CONTENT"
 const addZoom = () => mediumZoom(`.${NOTE_CONTENT} img`)
 
@@ -39,7 +39,7 @@ export default function NotePage({ note = Note }) {
           dangerouslySetInnerHTML={{ __html: body }}
         />
       </PageContainer>
-      <PageSeparator />
+      <PageSeparator className="hidden lg:block" />
       <MoreNotesBAnner />
       <PageSeparator />
       <Footer />

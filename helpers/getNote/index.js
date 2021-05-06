@@ -1,4 +1,4 @@
-import getNotes, { Note } from "@/services/getNotes"
+import getNotes, { Note } from "@/helpers/getNotes"
 import renderToString from "next-mdx-remote/render-to-string"
 import getComponents from "./getComponents"
 const rehypePrism = require("@mapbox/rehype-prism")
