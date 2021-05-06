@@ -22,7 +22,7 @@ export default function Showcase({ items = [] }) {
 
   return (
     <>
-      <Title>THINGS I’M PROUD OF</Title>
+      <Title>THINGS I’M PROUD</Title>
       <ItemsGallery>{itemsRender}</ItemsGallery>
     </>
   )

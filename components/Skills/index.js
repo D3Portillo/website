@@ -7,7 +7,7 @@ export default function Skills() {
   const [knowledgeBase, setKnowledgeBase] = useState(99)
   return (
     <>
-      <Title>SOME SKILLS</Title>
+      <Title>MY SKILLS</Title>
       <SkillBar base={knowledgeBase} name="Web Development" />
       <SkillBar base={knowledgeBase} name="Data Visualization" />
       <SkillBar base={knowledgeBase} name="UI&Web Witchcraft" />

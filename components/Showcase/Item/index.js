@@ -4,7 +4,7 @@ import NextImage from "next/image"
 import styled from "styled-components"
 
 const StyledNextImage = styled(NextImage)`
-  background-image: url(${(props) => props.coverPlaceholder});
+  background-image: url(${(props) => props.placeholder});
 `
 
 export default function Item({
@@ -29,7 +29,7 @@ export default function Item({
           layout="responsive"
           className="bg-cover w-full max-h-64 lg:max-h-full hover:opacity-95"
           src={cover}
-          coverPlaceholder={coverPlaceholder}
+          placeholder={coverPlaceholder}
         />
       </div>
       <div className="py-6 px-4 lg:opacity-0 group-hover:opacity-100 transition-all duration-200 lg:transform group-hover:translate-y-2">
