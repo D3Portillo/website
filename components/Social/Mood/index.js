@@ -40,7 +40,6 @@ export default function Mood() {
           <Image
             width={640}
             height={640}
-            loading="eager"
             style={{ minHeight: "8rem", backgroundColor: "black" }}
             className="w-full text-white"
             src={song.cover}

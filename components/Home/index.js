@@ -4,7 +4,6 @@ import meAsBase64 from "./constants/meAsBase64"
 function EagerlyLoadMe({ src = "", className = "" }) {
   return (
     <img
-      loading="eager"
       alt="👽"
       width={580}
       height={580}

@@ -1,7 +1,7 @@
 export default function Image({
   width,
   height,
-  loading = "lazy",
+  loading,
   placeholder,
   src,
   alt = "LOADING...",

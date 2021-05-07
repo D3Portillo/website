@@ -27,9 +27,9 @@ export default async function getNotes(addBody = false) {
     ghNotes.map(async (note) => {
       const { created_at, body, labels, title } = note
       const { data: frontmatter, content } = matter(body)
-      const { path = "", cover = null, description = "" } = frontmatter
+      const { path = "no-path", cover = 0, description = "" } = frontmatter
       const parsedPath = path.replace(/ +/g, "-")
-      let coverPlaceholder = null
+      let coverPlaceholder = 0
       if (cover) {
         // const { placeholder } = await getImageMetadata(cover)
         // coverPlaceholder = placeholder
