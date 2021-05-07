@@ -7,7 +7,11 @@ module.exports = {
     defaultLocale: "es-ES",
   },
   images: {
-    domains: ["dl.airtable.com"],
+    domains: [
+      "cdn.discordapp.com",
+      "dl.airtable.com",
+      "user-images.githubusercontent.com",
+    ],
     deviceSizes: [640, 750, 828, 1080],
   },
 }

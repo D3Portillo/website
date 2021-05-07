@@ -19,12 +19,19 @@ function Minimal({ children = null, href, target, download, title }) {
 }
 
 function Readable({ children = null, href }) {
+  let dest = children
+  if (typeof children === "string") {
+    if (children.includes("http")) {
+      const url = new URL(children)
+      dest = url.origin.replace("www.", "")
+    }
+  }
   return (
     <ExternalLink
       href={href}
       className="relative border-b-2 z-10 border-black group hover:opacity-80"
     >
-      {children}
+      {dest}
       <ArrowUpRight className="opacity-20 inline group-hover:opacity-100" />
     </ExternalLink>
   )

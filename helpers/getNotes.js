@@ -1,3 +1,4 @@
+// import getImageMetadata from "@/helpers/getImageMetadata"
 import matter from "gray-matter"
 import { Octokit } from "@octokit/rest"
 const { GH_TOKEN } = process.env
@@ -14,6 +15,7 @@ const kit = new Octokit({ auth: GH_TOKEN })
  * @property { string } path
  * @property { string } cover
  * @property { string } description
+ * @property { string? } coverPlaceholder
  */
 
 /**
@@ -25,10 +27,17 @@ export default async function getNotes(addBody = false) {
     ghNotes.map(async (note) => {
       const { created_at, body, labels, title } = note
       const { data: frontmatter, content } = matter(body)
-      const { path = "" } = frontmatter
+      const { path = "", cover = null, description = "" } = frontmatter
       const parsedPath = path.replace(/ +/g, "-")
+      let coverPlaceholder = null
+      if (cover) {
+        // const { placeholder } = await getImageMetadata(cover)
+        // coverPlaceholder = placeholder
+      }
       return {
-        ...frontmatter,
+        cover,
+        coverPlaceholder,
+        description,
         path: parsedPath,
         created_at,
         labels,

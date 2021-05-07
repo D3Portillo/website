@@ -6,10 +6,6 @@ export default function DefaultPageLayout({ children = null }) {
     <div className="text-xl pt-10 lg:px-10 lg:text-4xl pb-0">
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-        />
         <title>{TITLE}</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.ico" />

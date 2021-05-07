@@ -7,7 +7,7 @@ import PageSeparator from "@/components/PageSeparator"
 import PageContainer from "@/components/PageContainer"
 import mediumZoom from "medium-zoom"
 import NullComponent from "@/components/NullComponent"
-import Image from "@/components/Image"
+import NextImage from "next/image"
 import SeoTags from "@/components/SeoTags"
 import { useEffect } from "react"
 import MoreNotesBanner from "@/components/MoreNotesBanner"
@@ -16,7 +16,15 @@ const NOTE_CONTENT = "NOTE_CONTENT"
 const addZoom = () => mediumZoom(`.${NOTE_CONTENT} img`)
 
 export default function NotePage({ note = Note }) {
-  const { body, cover, description, title, path, seoImage } = note
+  const {
+    body,
+    cover,
+    coverPlaceholder,
+    description,
+    title,
+    path,
+    seoImage,
+  } = note
   const fullPath = getDomain(`/notes/${path}`)
   const fullTitle = `Notes | ${title}`
   const CoverSeparator = cover ? PageSeparator : NullComponent
@@ -29,8 +37,17 @@ export default function NotePage({ note = Note }) {
         image={seoImage}
         url={fullPath}
       />
-      <PageContainer isFull withNavigation hidden={!cover}>
-        <Image src={cover} className="w-full" />
+      <PageContainer isFull withNavigation>
+        {coverPlaceholder ? (
+          <NextImage
+            width={1200}
+            height={630}
+            placeholder={coverPlaceholder}
+            src={cover}
+            layout="responsive"
+            className="w-full"
+          />
+        ) : null}
       </PageContainer>
       <CoverSeparator />
       <PageContainer>

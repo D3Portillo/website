@@ -9,9 +9,12 @@ export default function Bio() {
         I’m 22, all stuff related to nowadays gadgets makes me go crazy.
       </Paragraph>
       <Paragraph>
-        My current job is to be Chief Web Officer at the SPOT team 🤘. Some of
-        my hobbies are playing around with code, reading, watch anime or playing
-        videogames on spare time.
+        My current job is to be Chief Web Officer at the SPOT team{" "}
+        <span role="img" aria-label="sign of rock">
+          🤘
+        </span>
+        . Some of my hobbies are playing around with code, reading, watch anime
+        or playing videogames on spare time.
       </Paragraph>
       <Paragraph>
         I really love automation related topics, Design Systems, DataViz,

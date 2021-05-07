@@ -26,6 +26,7 @@
     "iframe-resizer-react": "^1.1.0",
     "next-mdx-remote": "^2.1.4",
     "postcss": "^8.2.10",
+    "rehype-accessible-emojis": "^0.3.2",
     "sharp": "^0.28.1",
     "spotify-web-api-node": "^5.0.2",
     "tailwindcss": "^2.1.1"

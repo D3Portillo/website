@@ -4,7 +4,7 @@ import { useMemo } from "react"
 const TopNavigation = dynamic(() => import("@/components/TopNavigation"), {
   ssr: false,
   loading: () => {
-    return <div className="h-32 bg-white w-full" />
+    return <div style={{ height: "7.5rem" }} />
   },
 })
 
@@ -12,7 +12,6 @@ export default function PageContainer({
   children = null,
   withNavigation = false,
   isFull = false,
-  hidden = false,
 }) {
   const Navigation = useMemo(() => {
     return withNavigation ? TopNavigation : NullComponent
@@ -25,13 +24,11 @@ export default function PageContainer({
     }
     return isFull ? FULL_WIDTH : "px-10"
   }, [isFull, withNavigation])
-
+  const content = children ? <div className={className}>{children}</div> : null
   return (
     <>
       <Navigation />
-      <div hidden={hidden} className={className}>
-        {children}
-      </div>
+      {content}
     </>
   )
 }

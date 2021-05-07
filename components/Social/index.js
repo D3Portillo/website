@@ -1,6 +1,7 @@
 import Title from "@/components/Title"
 import Link from "@/components/Link"
-import Mood from "./Mood"
+import dynamic from "next/dynamic"
+const Mood = dynamic(() => import("./Mood"))
 
 export default function Social() {
   return (
