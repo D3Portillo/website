@@ -25,7 +25,7 @@ export default async function getImageMetadata(url = "") {
     const placeholderH = Math.round(height * placeholderMultiplier)
     const resizedImage = await image.resize(placeholderW, placeholderH)
     const content = await resizedImage.getBase64Async(mime)
-    return { placeholder: content , width, height}
+    return { placeholder: content, width, height }
   }
   return {}
 }
