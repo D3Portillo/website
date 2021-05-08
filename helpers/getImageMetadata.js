@@ -8,8 +8,7 @@ const sharp = require("sharp")
 export default async function getImageMetadata(url = "") {
   let placeholder = undefined
   try {
-    const result = { headers: {} }
-    // await centra(url).send()
+    const result = await centra(url).send()
     const type = result.headers["content-type"] || ""
     if (type.match(/jpg|jpeg|png/gi)) {
       placeholder = result.body

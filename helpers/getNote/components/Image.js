@@ -1,6 +1,6 @@
 import ImageComponent from "@/components/Image"
 import NextImage from "next/image"
-import { images } from "@/root/next.config"
+import imageDomains from "@/constants/imageDomains"
 import { nanoid } from "nanoid"
 
 const Container = ({ children }) => {
@@ -9,8 +9,8 @@ const Container = ({ children }) => {
   )
 }
 
-export default function Image({ src = "", width, height, placeholder }) {
-  const isInNextDomains = images.domains.find((domain) => {
+export default function Image({ src = "", placeholder, ...props }) {
+  const isInNextDomains = imageDomains.find((domain) => {
     return src.match(domain)
   })
 
@@ -27,23 +27,13 @@ export default function Image({ src = "", width, height, placeholder }) {
             }`,
           }}
         />
-        <NextImage
-          width={width}
-          className={className}
-          height={height}
-          src={src}
-        />
+        <NextImage {...props} src={src} />
       </Container>
     )
   }
   return (
     <Container>
-      <ImageComponent
-        src={src}
-        placeholder={placeholder}
-        width={width}
-        height={height}
-      />
+      <ImageComponent {...props} src={src} placeholder={placeholder} />
     </Container>
   )
 }

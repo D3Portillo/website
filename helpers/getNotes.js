@@ -5,7 +5,6 @@ const { GH_TOKEN } = process.env
 const REPO_NAME = "website-2"
 const READY_TAG = "ready-to-publish"
 const kit = new Octokit({ auth: GH_TOKEN })
-
 /**
  * @typedef Note
  * @property { string } body
@@ -31,6 +30,7 @@ export default async function getNotes(addBody = false) {
       const parsedPath = path.replace(/ +/g, "-")
       let coverPlaceholder = 0
       if (cover) {
+
         // const { placeholder } = await getImageMetadata(cover)
         // coverPlaceholder = placeholder
       }

@@ -1,3 +1,5 @@
+const imageDomains = require("./constants/imageDomains")
+
 module.exports = {
   future: {
     webpack5: true,
@@ -7,11 +9,7 @@ module.exports = {
     defaultLocale: "es-ES",
   },
   images: {
-    domains: [
-      "cdn.discordapp.com",
-      "dl.airtable.com",
-      "user-images.githubusercontent.com",
-    ],
+    domains: imageDomains,
     deviceSizes: [640, 750, 828, 1080],
   },
 }
