@@ -1,5 +1,6 @@
 {
   "name": "d3portillo.me",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -8,13 +9,14 @@
   "dependencies": {
     "date-fns": "^2.21.1",
     "medium-zoom": "^1.0.6",
-    "react": "17.0.2",
     "next": "^10.2.0",
+    "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
     "styled-components": "^5.2.3"
   },
   "devDependencies": {
+    "jimp": "^0.16.1",
     "@mapbox/rehype-prism": "^0.6.0",
     "@octokit/rest": "^18.5.2",
     "airtable": "^0.10.1",
