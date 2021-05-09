@@ -7,11 +7,11 @@ import PageSeparator from "@/components/PageSeparator"
 import PageContainer from "@/components/PageContainer"
 import mediumZoom from "medium-zoom"
 import NullComponent from "@/components/NullComponent"
-import NextImage from "next/image"
 import SeoTags from "@/components/SeoTags"
 import { useEffect } from "react"
 import MoreNotesBanner from "@/components/MoreNotesBanner"
 import getDomain from "@/helpers/getDomain"
+import Image from "@/components/Image"
 const NOTE_CONTENT = "NOTE_CONTENT"
 const addZoom = () => mediumZoom(`.${NOTE_CONTENT} img`)
 
@@ -39,7 +39,7 @@ export default function NotePage({ note = Note }) {
       />
       <PageContainer isFull withNavigation>
         {coverPlaceholder ? (
-          <NextImage
+          <Image
             width={1200}
             height={630}
             placeholder={coverPlaceholder}

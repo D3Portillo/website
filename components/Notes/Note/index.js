@@ -15,11 +15,15 @@ export default function Component({
     <Link href={`/notes/${path}`}>
       <a className="block group border-t border-b lg:border-l lg:border-r overflow-hidden focus:shadow-inner">
         <div className="w-full flex relative">
-          <Image
-            className="w-full filter lg:grayscale group-hover:filter-none"
-            hidden={!cover}
-            src={cover}
-          />
+          <div className="w-full">
+            <Image
+              width={1200 / 2}
+              height={630 / 2}
+              className="filter lg:grayscale group-hover:filter-none"
+              hidden={!cover}
+              src={cover}
+            />
+          </div>
           <div className="flex-grow" />
           <div className="hidden lg:flex w-8 h-8 p-2 group-hover:translate-y-8 transition-transform duration-150 text-base transform rotate-90 origin-center whitespace-nowrap items-center uppercase">
             {created}

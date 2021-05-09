@@ -10,7 +10,7 @@ module.exports = {
   },
   images: {
     domains: imageDomains,
-    deviceSizes: [640, 750, 828, 1080],
+    deviceSizes: [640, 828, 1080],
   },
   webpack: (config, { webpack }) => {
     const IGNORED_MODULES = /jimp|sharp|centra/
