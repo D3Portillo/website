@@ -15,11 +15,13 @@ export default async function getGoodies() {
       0: { url, thumbnails },
     } = files
     const preview = customCover ? customCover[0].thumbnails : thumbnails
+    const placeholder = preview.small.url
     return {
       id,
       title,
       description,
       preview: preview.large.url,
+      placeholder,
       url,
       tags,
       presentedDate,

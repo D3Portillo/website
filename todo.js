@@ -2,12 +2,12 @@
  * @TODO
  * // * Paragraph Component with sizes
  * // * Layout components
- * * Image Container bug
+ * // * Image Container bug
  * // * SEO
  * * Mejorar/Pulir las Notas
- * * Add Disqus
+ * // * Add Disqus
  * * Last Mobile update
- * * services => helpers
+ * // * services => helpers
  * * add /hooks
  * // * CV in PDF
  * // * Autogenerates notes cover

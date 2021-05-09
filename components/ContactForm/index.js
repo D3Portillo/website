@@ -1,7 +1,7 @@
 import SubmitButton from "./SubmitButton"
 import Textarea from "./Textarea"
 import Input from "./Input"
-import PageContainer from "../PageContainer"
+import FullWidthContainer from "@/components/FullWidthContainer"
 export const FORM_ID = "CONTACT_FORM_ID"
 
 /** @type { import("react").FormEventHandler } */
@@ -25,7 +25,7 @@ function handleSubmit(e) {
 
 export default function ContactForm() {
   return (
-    <PageContainer isFull>
+    <FullWidthContainer>
       <form
         method="POST"
         onSubmit={handleSubmit}
@@ -48,6 +48,6 @@ export default function ContactForm() {
           <SubmitButton />
         </div>
       </form>
-    </PageContainer>
+    </FullWidthContainer>
   )
 }

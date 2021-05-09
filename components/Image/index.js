@@ -10,16 +10,18 @@ export default function Image({
   style = {},
   className = "",
   hidden = false,
+  optimize = true,
 }) {
   if (hidden) return null
   const isInNextDomains = imageDomains.find((domain) => {
-    return src.match(domain)
+    return src.includes(domain)
   })
   const baseClassName =
     "flex text-center bg-cover bg-gray-50 italic text-lg items-center justify-center object-cover"
   const props = {
     width,
     height,
+    src,
     alt: placeholder ? "" : alt,
     style: placeholder
       ? { ...style, backgroundImage: `url(${placeholder})` }
@@ -28,10 +30,8 @@ export default function Image({
     baseClassName,
     className,
   }
-  if (isInNextDomains) {
-    return <NextImage {...props} src={src} />
+  if (isInNextDomains && optimize) {
+    return <NextImage {...props} />
   }
-  return (
-    <img {...props} className={`${baseClassName} ${className}`} src={src} />
-  )
+  return <img {...props} className={`${baseClassName} ${className}`} />
 }

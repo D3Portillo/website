@@ -1,8 +1,7 @@
 import Goodies from "@/components/Goodies"
 import getGoodies from "@/helpers/getGoodies"
-import Footer from "@/components/Footer"
 import PageSeparator from "@/components/PageSeparator"
-import PageContainer from "@/components/PageContainer"
+import FullWidthContainer from "@/components/FullWidthContainer"
 import SeoTags from "@/components/SeoTags"
 import getDomain from "@/helpers/getDomain"
 
@@ -14,11 +13,10 @@ export default function GoodiesPage({ goodies = [] }) {
         url={getDomain("/goodies")}
         image={getDomain("/goodies/seo/goodies.png")}
       />
-      <PageContainer withNavigation>
+      <FullWidthContainer>
         <Goodies items={goodies} />
-      </PageContainer>
+      </FullWidthContainer>
       <PageSeparator />
-      <Footer />
     </>
   )
 }

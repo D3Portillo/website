@@ -1,6 +1,6 @@
 import { RiInstagramFill, RiLinkedinFill } from "react-icons/ri"
 import { GrTwitter } from "react-icons/gr"
-import PageContainer from "@/components/PageContainer"
+import FullWidthContainer from "@/components/FullWidthContainer"
 import ExternalLink from "@/components/ExternalLink"
 
 function LinkTo({ children = null, href, title }) {
@@ -17,7 +17,7 @@ function LinkTo({ children = null, href, title }) {
 
 export default function Footer() {
   return (
-    <PageContainer isFull>
+    <FullWidthContainer>
       <footer className="bg-black text-xl p-10 lg:px-20 pt-36 text-white flex flex-wrap-reverse">
         <div className="flex-grow flex flex-col justify-end w-full lg:w-auto">
           <div className="flex space-x-2 items-end">
@@ -67,6 +67,6 @@ export default function Footer() {
           </LinkTo>
         </div>
       </footer>
-    </PageContainer>
+    </FullWidthContainer>
   )
 }

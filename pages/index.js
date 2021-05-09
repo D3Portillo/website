@@ -6,11 +6,10 @@ import Skills from "@/components/Skills"
 import Social from "@/components/Social"
 import Moar from "@/components/Moar"
 import ContactForm from "@/components/ContactForm"
-import Footer from "@/components/Footer"
 import getShowcaseItems from "@/helpers/getShowcaseItems"
-import PageContainer from "@/components/PageContainer"
 import SeoTags from "@/components/SeoTags"
 import getCV from "@/helpers/getCV"
+import NullComponent from "@/components/NullComponent"
 
 export default function HomePage({ showcaseItems = [], cvURL = "" }) {
   return (
@@ -18,20 +17,17 @@ export default function HomePage({ showcaseItems = [], cvURL = "" }) {
       <SeoTags />
       <Home />
       <PageSeparator />
-      <PageContainer>
-        <Bio />
-        <PageSeparator />
-        <Showcase items={showcaseItems} />
-        <PageSeparator />
-        <Skills />
-        <PageSeparator />
-        <Social />
-        <PageSeparator />
-        <Moar cvURL={cvURL} />
-        <PageSeparator />
-      </PageContainer>
+      <Bio />
+      <PageSeparator />
+      <Showcase items={showcaseItems} />
+      <PageSeparator />
+      <Skills />
+      <PageSeparator />
+      <Social />
+      <PageSeparator />
+      <Moar cvURL={cvURL} />
+      <PageSeparator />
       <ContactForm />
-      <Footer />
     </>
   )
 }
@@ -47,3 +43,5 @@ export async function getStaticProps() {
     },
   }
 }
+
+HomePage.Navigation = NullComponent

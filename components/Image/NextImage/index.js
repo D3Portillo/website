@@ -12,7 +12,7 @@ export default function NextImageContainer({
 }) {
   const bgClx = nanoid()
   return (
-    <div style={{ minWidth: width, minHeight: height }} className={className}>
+    <div className={className}>
       <style
         dangerouslySetInnerHTML={{
           __html: `

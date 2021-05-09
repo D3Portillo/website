@@ -2,9 +2,8 @@ import getNote from "@/helpers/getNote"
 import getNotes, { Note } from "@/helpers/getNotes"
 import getImageCover from "@/helpers/getImageCover"
 import addBufferToPublic from "@/helpers/addBufferToPublic"
-import Footer from "@/components/Footer"
 import PageSeparator from "@/components/PageSeparator"
-import PageContainer from "@/components/PageContainer"
+import FullWidthContainer from "@/components/FullWidthContainer"
 import mediumZoom from "medium-zoom"
 import NullComponent from "@/components/NullComponent"
 import SeoTags from "@/components/SeoTags"
@@ -37,7 +36,7 @@ export default function NotePage({ note = Note }) {
         image={seoImage}
         url={fullPath}
       />
-      <PageContainer isFull withNavigation>
+      <FullWidthContainer className={coverPlaceholder && "-mt-12"}>
         {coverPlaceholder ? (
           <Image
             width={1200}
@@ -48,18 +47,15 @@ export default function NotePage({ note = Note }) {
             className="w-full"
           />
         ) : null}
-      </PageContainer>
+      </FullWidthContainer>
       <CoverSeparator />
-      <PageContainer>
-        <div
-          className={`${NOTE_CONTENT} max-w-6xl mx-auto`}
-          dangerouslySetInnerHTML={{ __html: body }}
-        />
-      </PageContainer>
+      <div
+        className={`${NOTE_CONTENT} max-w-6xl mx-auto`}
+        dangerouslySetInnerHTML={{ __html: body }}
+      />
       <PageSeparator className="hidden lg:block" />
       <MoreNotesBanner />
       <PageSeparator />
-      <Footer />
     </>
   )
 }
@@ -83,7 +79,9 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const notes = await getNotes()
+  const notes = await getNotes({
+    matterOnly: true,
+  })
   const paths = notes.map(({ path }) => {
     return { params: { note: path } }
   })

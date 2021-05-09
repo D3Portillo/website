@@ -3,22 +3,13 @@ import Link from "@/components/Link"
 import meAsBase64 from "./constants/meAsBase64"
 function EagerlyLoadMe({ src = "", className = "" }) {
   return (
-    <img
-      alt="👽"
-      width={580}
-      height={580}
-      style={{
-        minWidth: `clamp(240,50vw,580)`,
-      }}
-      src={src}
-      className={`max-w-lg w-full ${className}`}
-    />
+    <img alt="👽" width={468} height={570} src={src} className={className} />
   )
 }
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col-reverse lg:flex-row">
+    <div className="flex mt-4 min-h-screen flex-col-reverse lg:flex-row">
       <div className="flex-grow flex items-end">
         <div
           tabIndex="0"
@@ -38,7 +29,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <p className="max-w-xl text-2xl lg:text-4xl text-right px-10 lg:p-0">
+      <p className="max-w-xl pt-10 text-2xl lg:text-4xl text-right">
         👋 Hey, <i>Denny</i> here.
         <br />
         Love <u>JavaScript</u> and playing around with the Web Universe.

@@ -9,6 +9,7 @@ export default function Item({
   description,
   presentedDate,
   preview,
+  placeholder,
   tags,
   url,
 }) {
@@ -39,13 +40,15 @@ export default function Item({
           }}
           className="max-w-xs lg:max-w-full border lg:-mt-px lg:p-6 mb-6 block"
         >
-          <Image
-            style={{
-              height: 420,
-            }}
-            src={preview}
-            className="w-full max-h-56 lg:max-h-full"
-          />
+          <div className="overflow-hidden">
+            <Image
+              width={600}
+              height={400}
+              src={preview}
+              placeholder={placeholder}
+              className="w-full max-h-56 lg:max-h-full"
+            />
+          </div>
           <RegularText className="py-8 px-4 lg:px-0 mb-2 text-center capitalize">
             <b className="uppercase lg:text-2xl">{title}</b>
             <p className="mt-2 lg:px-2">

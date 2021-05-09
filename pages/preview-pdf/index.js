@@ -1,3 +1,5 @@
+import NullComponent from "@/components/NullComponent"
+import NoFooterLayout from "@/layouts/NoFooterLayout"
 import { useRouter } from "next/router"
 
 export default function PreviewPDFPage() {
@@ -15,3 +17,6 @@ export default function PreviewPDFPage() {
     </div>
   )
 }
+
+PreviewPDFPage.Layout = NoFooterLayout
+PreviewPDFPage.Navigation = NullComponent

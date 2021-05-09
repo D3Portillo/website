@@ -27,7 +27,7 @@ export default function TopNavigation() {
   const shareURL = useTwitterURL()
   return (
     <>
-      <div className="flex px-20 py-6 -mx-10 -mt-10 space-x-8 items-center bg-white border-b">
+      <div className="flex py-6 px-12 -mx-20 space-x-8 items-center bg-white border-b">
         <a title="It's me, click it!" href="/">
           <Image
             className="h-16 w-16 lg:h-14 lg:w-14 rounded-full filter saturate-200 contrast-100 hover:filter-none"

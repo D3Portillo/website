@@ -1,8 +1,7 @@
-import Footer from "@/components/Footer"
 import getNotes, { Note } from "@/helpers/getNotes"
 import ContactForm from "@/components/ContactForm"
 import Notes from "@/components/Notes"
-import PageContainer from "@/components/PageContainer"
+import FullWidthContainer from "@/components/FullWidthContainer"
 import SeoTags from "@/components/SeoTags"
 import getDomain from "@/helpers/getDomain"
 const IMAGE = getDomain("/seo/notes.png")
@@ -21,17 +20,18 @@ export default function NotesPage({ notes = [] }) {
         image={IMAGE}
         url={getDomain("/notes")}
       />
-      <PageContainer isFull withNavigation>
+      <FullWidthContainer className="-mt-12">
         <Notes notes={notes} />
-      </PageContainer>
+      </FullWidthContainer>
       <ContactForm />
-      <Footer />
     </>
   )
 }
 
 export async function getStaticProps() {
-  const notes = await getNotes()
+  const notes = await getNotes({
+    matterOnly: true,
+  })
   return {
     props: { notes },
   }

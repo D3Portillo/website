@@ -9,10 +9,10 @@ const { rehypeAccessibleEmojis } = require("rehype-accessible-emojis")
  * @returns { Promise<Note> }
  */
 export default async function getNote(path = "") {
-  const allNotes = await getNotes(true)
-  const note = allNotes.find((note) => {
-    return note.path === path
+  const result = await getNotes({
+    queryByPath: path,
   })
+  const note = result[0]
   const { renderedOutput: body } = await renderToString(note.body, {
     components: getComponents(),
     mdxOptions: {

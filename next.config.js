@@ -11,6 +11,7 @@ module.exports = {
   images: {
     domains: imageDomains,
     deviceSizes: [640, 828, 1080],
+    imageSizes: [124, 252, 480],
   },
   webpack: (config, { webpack }) => {
     const IGNORED_MODULES = /jimp|sharp|centra/

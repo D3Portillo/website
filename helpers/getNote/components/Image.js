@@ -1,13 +1,9 @@
 import Image from "@/components/Image"
 
-const Container = ({ children }) => {
-  return <div className="w-full my-16 flex justify-center">{children}</div>
-}
-
-export default function ImageContainer({ src = "", ...props }) {
+export default function ImageContainer(props) {
   return (
-    <Container>
-      <Image {...props} src={src} />
-    </Container>
+    <div className="w-full my-16 flex justify-center">
+      <Image {...props} optimize={false} />
+    </div>
   )
 }

@@ -1,22 +1,29 @@
-import dynamic from "next/dynamic"
 import { useMemo } from "react"
 import Title from "@/components/Title"
 import ItemsGallery from "@/components/ItemsGallery"
 import PageSeparator from "@/components/PageSeparator"
-const Item = dynamic(() => import("./Item"), {
-  ssr: false,
-})
+import Item from "./Item"
 
 export default function Showcase({ items = [] }) {
   const [itemsRender, topics] = useMemo(() => {
     let topics = []
     const renders = items.map((item) => {
-      const { title, description, id, presentedDate, preview, tags, url } = item
+      const {
+        placeholder,
+        title,
+        description,
+        id,
+        presentedDate,
+        preview,
+        tags,
+        url,
+      } = item
       topics = new Set([...topics, ...tags])
       return (
         <Item
           title={title}
           key={id}
+          placeholder={placeholder}
           description={description}
           url={url}
           presentedDate={presentedDate}

@@ -18,35 +18,58 @@ const kit = new Octokit({ auth: GH_TOKEN })
  */
 
 /**
+ * @param { Object } opt
+ * @param { boolean } opt.matterOnly - If true returns only notes frontmatter
+ * @param { string } opt.queryByPath - note path to fetch/filter from all notes
  * @returns { Promise<Note[]> }
  */
-export default async function getNotes(addBody = false) {
+export default async function getNotes(opt = {}) {
   const ghNotes = await fetchNotesFromGH()
-  const notes = await Promise.all(
-    ghNotes.map((note) => parseNote(note, addBody))
-  )
-  return notes
+  let notes = ghNotes.map(getNotesMatter)
+  if (opt.queryByPath) {
+    notes = notes.filter((note) => {
+      return note.path === opt.queryByPath
+    })
+  }
+  if (opt.matterOnly) {
+    return notes.map((note) => {
+      return {
+        ...note,
+        body: null,
+      }
+    })
+  }
+  return await Promise.all(notes.map(getFullNotesContent))
 }
 
-async function parseNote(note, addBody) {
+function getNotesMatter(note) {
   const { created_at, body, labels, title } = note
-  const { data: frontmatter, content } = matter(body)
+  const { data: frontmatter } = matter(body)
   const { path = "no-path", cover = 0, description = "" } = frontmatter
   const parsedPath = path.replace(/ +/g, "-")
+  return {
+    cover,
+    description,
+    path: parsedPath,
+    created_at,
+    labels,
+    title,
+    body,
+  }
+}
+
+async function getFullNotesContent(note) {
+  const { cover, body } = note
+  const { content } = matter(body)
   let coverPlaceholder = 0
   if (cover) {
     const { placeholder } = await getImageMetadata(cover)
     coverPlaceholder = placeholder
   }
   return {
-    cover,
+    ...note,
     coverPlaceholder,
-    description,
-    path: parsedPath,
-    created_at,
-    labels,
-    body: addBody && content,
-    title,
+    body: content,
   }
 }
 

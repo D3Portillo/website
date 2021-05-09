@@ -4,7 +4,6 @@ import Paragraph from "@/components/Paragraph"
 import SubTitle from "@/components/SubTitle"
 import Blockquote from "@/components/Blockquote"
 import Link from "@/components/Link"
-import NullComponent from "@/components/NullComponent"
 
 import UnorderedList from "./components/UnorderedList"
 import OrderedList from "./components/OrderedList"
@@ -26,7 +25,7 @@ export default function getComponents() {
     blockquote: Blockquote,
     a: Link.Readable,
     br: PageSeparator,
-    hr: NullComponent,
+    hr: null,
     iframe: Iframe,
     img: Image,
   }

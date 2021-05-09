@@ -1,9 +1,9 @@
-import Head from "next/head"
 import { TITLE } from "@/components/SeoTags"
+import Head from "next/head"
 
-export default function DefaultPageLayout({ children = null }) {
+export default function LayoutContainer({ children = null }) {
   return (
-    <div className="text-xl pt-10 lg:px-10 lg:text-4xl pb-0">
+    <div className="text-xl px-10 lg:px-20 lg:text-4xl">
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <title>{TITLE}</title>

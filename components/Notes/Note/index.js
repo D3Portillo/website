@@ -1,7 +1,9 @@
 import { ArrowUpRight } from "@/components/Icons"
 import Image from "@/components/Image"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
+const COVER_WIDTH = 600
 export default function Component({
   created,
   description,
@@ -10,17 +12,23 @@ export default function Component({
   path,
   labels = [],
 }) {
+  const [hideCover, setHideCover] = useState(!cover)
+  useEffect(() => {
+    if (window.innerWidth < COVER_WIDTH) {
+      setHideCover(true)
+    }
+  }, [])
   const labelsDivider = labels.length && "・"
   return (
     <Link href={`/notes/${path}`}>
       <a className="block group border-t border-b lg:border-l lg:border-r overflow-hidden focus:shadow-inner">
-        <div className="w-full flex relative">
+        <div className="flex relative">
           <div className="w-full">
             <Image
-              width={1200 / 2}
-              height={630 / 2}
+              width={COVER_WIDTH}
+              height={315}
               className="filter lg:grayscale group-hover:filter-none"
-              hidden={!cover}
+              hidden={hideCover}
               src={cover}
             />
           </div>
@@ -34,10 +42,9 @@ export default function Component({
             <ArrowUpRight className="text-3xl" />
           </div>
         </div>
-        <p className="p-10 lg:p-20 leading-tight lg:text-3xl mb-6">
-          <b>{title}</b>
-          <br />
-          <i>{description}</i>
+        <p className="p-10 lg:p-20 leading-tight mb-6">
+          <b className="text-3xl lg:text-4xl">{title}</b>
+          <div className="mt-3 lg:text-3xl">{description}</div>
         </p>
       </a>
     </Link>
