@@ -5,7 +5,7 @@ module.exports = {
     "./pages/**/*.js",
     "./layouts/**/*.js",
     "./components/**/*.js",
-    "./services/**/*.js",
+    "./helpers/**/*.js",
   ],
   darkMode: false,
   theme: {

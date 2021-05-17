@@ -23,6 +23,7 @@ export default function TopNavigation() {
         twitterShareURL={twitterShareURL}
         className="lg:hidden"
       />
+      <div className="h-12" />
     </>
   )
 }

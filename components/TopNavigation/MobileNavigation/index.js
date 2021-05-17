@@ -26,7 +26,6 @@ export default function MobileNavigation({
           <RiTwitterFill className="text-2xl" />
         </ExternalLink>
       </div>
-      <div className="h-12" />
       <div
         hidden={!showNav}
         className="fixed bg-white z-20 h-screen inset-0 flex flex-col"

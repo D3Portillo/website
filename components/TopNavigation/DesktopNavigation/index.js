@@ -39,7 +39,6 @@ export default function DesktopNavigation({
           <FiTwitter className="text-3xl" />
         </ExternalLink>
       </div>
-      <div className="h-12" />
     </div>
   )
 }
