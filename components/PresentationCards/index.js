@@ -13,7 +13,6 @@ export default function Home() {
   }, [])
   return (
     <>
-      <Title>PRESENTATION CARDS</Title>
       <div className="flex flex-col space-y-8 items-start max-w-2xl">
         <Image className={imageClass} src="/cards/back.svg" />
         <Image className={imageClass} src="/cards/front.svg" />

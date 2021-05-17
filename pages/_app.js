@@ -5,7 +5,7 @@ import "../styles/prism.css"
 const DefaultNavigation = dynamic(() => import("@/components/TopNavigation"), {
   ssr: false,
   loading: () => {
-    return <div style={{ height: "7.5rem" }} />
+    return <div style={{ minHeight: "7rem" }} />
   },
 })
 

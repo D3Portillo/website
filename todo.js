@@ -9,6 +9,9 @@
  * * Last Mobile update
  * // * services => helpers
  * * add /hooks
+ * // * New mobile navigation
+ * // * module to get random module for notes cover
+ * // * Reduce note's json payload(image cover removed)
  * // * CV in PDF
  * // * Autogenerates notes cover
  * // * PDF Preview for slides
