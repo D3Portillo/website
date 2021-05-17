@@ -8,7 +8,7 @@
  * // * Add Disqus
  * * Last Mobile update
  * // * services => helpers
- * * add /hooks
+ * // * add /hooks
  * // * New mobile navigation
  * // * module to get random module for notes cover
  * // * Reduce note's json payload(image cover removed)
