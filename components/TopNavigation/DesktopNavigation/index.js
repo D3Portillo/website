@@ -18,14 +18,14 @@ export default function DesktopNavigation({
 }) {
   return (
     <div className={className}>
-      <div className="flex py-6 px-12 -mx-20 space-x-8 items-center bg-white border-b">
+      <div className="flex py-6 px-12 space-x-8 items-center bg-white border-b">
         <a title="It's me, click it!" href="/">
           <Image
             className="h-14 w-14 rounded-full filter saturate-200 contrast-100 hover:filter-none"
             src={meAsB64}
           />
         </a>
-        <RegularText className="flex space-x-6">
+        <RegularText className="flex space-x-8">
           <NavigationLink href="/#">Home</NavigationLink>
           <NavigationLink href="/notes">Notes</NavigationLink>
           <NavigationLink href={`/#${FORM_ID}`}>Contact</NavigationLink>
@@ -33,7 +33,7 @@ export default function DesktopNavigation({
         <div className="flex-grow"></div>
         <ExternalLink
           href={twitterShareURL}
-          className="flex hover:bg-cyan focus:ring-2 ring-black py-4 rounded-full px-8 items-center space-x-2"
+          className="flex border border-dashed hover:bg-cyan hover:border-transparent focus:ring-2 ring-black py-4 rounded-full px-8 items-center space-x-2"
         >
           <RegularText className="text-base">Tweet</RegularText>
           <FiTwitter className="text-3xl" />

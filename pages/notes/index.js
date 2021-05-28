@@ -6,6 +6,7 @@ import SeoTags from "@/components/SeoTags"
 import getDomain from "@/helpers/getDomain"
 import PageSeparator from "@/components/PageSeparator"
 import Link from "@/components/Link"
+import { useMemo } from "react"
 const IMAGE = getDomain("/seo/notes.png")
 const DESCRIPTION =
   "Estas son notas que hago y comparto con ustedes y NO, no es un Blog. A veces su contenido es en inglés."
@@ -14,25 +15,33 @@ const DESCRIPTION =
  * @param {{ notes: Note[] }} props
  */
 export default function NotesPage({ notes = [] }) {
+  const notesURL = getDomain("/notes")
+  const myRandomRead = useMemo(() => {
+    const notesPath = notes.map(({ path }) => `${notesURL}/${path}`)
+    const randomIndex = notesPath.length * Math.random()
+    return notesPath[Math.floor(randomIndex)]
+  }, [notes])
+
   return (
     <>
       <SeoTags
         title="Denny Portillo | Notes"
         description={DESCRIPTION}
         image={IMAGE}
-        url={getDomain("/notes")}
+        url={notesURL}
       />
       <FullWidthContainer className="-mt-12">
         <Notes notes={notes} />
       </FullWidthContainer>
       <PageSeparator />
-      <b style={{ fontSize: "clamp(8rem, 50vmin, 24vw)", lineHeight: "74%" }}>ARE YOU BORED?</b>
-      <div className="flex mt-8">
-        <Link>
+      <b style={{ fontSize: "clamp(6rem, 50vmin, 24vw)", lineHeight: "74%" }}>
+        ARE YOU BORED?
+      </b>
+      <div className="flex mt-8 mb-24">
+        <Link href={myRandomRead}>
           Grab a <strike>Random</strike> read
         </Link>
       </div>
-      <PageSeparator />
       <ContactForm />
     </>
   )

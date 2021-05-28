@@ -2,23 +2,12 @@ import { RiInstagramFill, RiLinkedinFill } from "react-icons/ri"
 import { GrTwitter } from "react-icons/gr"
 import FullWidthContainer from "@/components/FullWidthContainer"
 import ExternalLink from "@/components/ExternalLink"
-
-function LinkTo({ children = null, href, title }) {
-  return (
-    <ExternalLink
-      title={title}
-      className="italic hover:line-through transform hover:-skew-y-1"
-      href={href}
-    >
-      {children}
-    </ExternalLink>
-  )
-}
+import Link from "@/components/Link"
 
 export default function Footer() {
   return (
     <FullWidthContainer>
-      <footer className="bg-black text-xl p-10 lg:px-20 pt-36 text-white flex flex-wrap-reverse">
+      <footer className="bg-black text-xl px-8 pb-10 lg:px-20 pt-36 text-white flex flex-wrap-reverse">
         <div className="flex-grow flex flex-col justify-end w-full lg:w-auto">
           <div className="flex space-x-2 items-end">
             <ExternalLink
@@ -56,15 +45,31 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex w-full lg:w-auto flex-col lg:items-end mb-6 pb-12 lg:mb-0 lg:pb-0 border-b lg:border-none">
-          <LinkTo href="/notes" title="A 'Blog' of Web things">
+          <strong className="mb-2">
+            MORE LINKS{" "}
+            <span
+              className="hidden lg:inline"
+              role="image"
+              aria-label="point down sign"
+            >
+              👇
+            </span>
+          </strong>
+          <Link.Readable href="/notes" title="A 'Blog' of Web things">
             My Notes
-          </LinkTo>
-          <LinkTo href="https://nodeschoolsm.io" title="Dev Community">
+          </Link.Readable>
+          <Link.Readable
+            href="https://nodeschoolsm.io"
+            title="Dev Community at El Salvador"
+          >
             NodeschoolSM
-          </LinkTo>
-          <LinkTo href="https://reactconf.dev" title="React related web conf.">
-            ReactConfCL
-          </LinkTo>
+          </Link.Readable>
+          <Link.Readable
+            href="https://reactconf.dev"
+            title="React related conf. running in Chile"
+          >
+            ReactconfCL
+          </Link.Readable>
         </div>
       </footer>
     </FullWidthContainer>

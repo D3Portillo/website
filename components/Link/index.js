@@ -18,7 +18,7 @@ function Minimal({ children = null, href, target, download, title }) {
   )
 }
 
-function Readable({ children = null, href }) {
+function Readable({ children = null, href, title }) {
   let dest = children
   if (typeof children === "string") {
     if (children.includes("http")) {
@@ -29,6 +29,7 @@ function Readable({ children = null, href }) {
   return (
     <ExternalLink
       href={href}
+      title={title}
       className="relative border-b-2 z-10 border-black group hover:opacity-80"
     >
       {dest}

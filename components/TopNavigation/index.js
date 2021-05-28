@@ -2,6 +2,7 @@ import { useRouter } from "next/router"
 import getDomain from "@/helpers/getDomain"
 import DesktopNavigation from "./DesktopNavigation"
 import MobileNavigation from "./MobileNavigation"
+import FullWidthContainer from "@/components/FullWidthContainer"
 
 function useTwitterURL() {
   const { asPath } = useRouter()
@@ -14,7 +15,7 @@ function useTwitterURL() {
 export default function TopNavigation() {
   const twitterShareURL = useTwitterURL()
   return (
-    <>
+    <FullWidthContainer>
       <DesktopNavigation
         twitterShareURL={twitterShareURL}
         className="hidden lg:block"
@@ -24,6 +25,6 @@ export default function TopNavigation() {
         className="lg:hidden"
       />
       <div className="h-12" />
-    </>
+    </FullWidthContainer>
   )
 }

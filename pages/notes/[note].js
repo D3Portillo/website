@@ -13,20 +13,14 @@ import getDomain from "@/helpers/getDomain"
 import Image from "@/components/Image"
 const NOTE_CONTENT = "NOTE_CONTENT"
 const addZoom = () => mediumZoom(`.${NOTE_CONTENT} img`)
+const DefaultCoverSeparator = () => <div className="mt-12 lg:mt-20" />
 
 export default function NotePage({ note = Note }) {
-  const {
-    body,
-    cover,
-    coverPlaceholder,
-    description,
-    title,
-    path,
-    seoImage,
-  } = note
+  const { body, cover, coverPlaceholder, description, title, path, seoImage } =
+    note
   const fullPath = getDomain(`/notes/${path}`)
   const fullTitle = `Notes | ${title}`
-  const CoverSeparator = cover ? PageSeparator : NullComponent
+  const CoverSeparator = cover ? DefaultCoverSeparator : NullComponent
   useEffect(addZoom, [])
   return (
     <>

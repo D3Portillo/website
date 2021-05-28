@@ -30,7 +30,7 @@ export default function ContactForm() {
         method="POST"
         onSubmit={handleSubmit}
         id={FORM_ID}
-        className="bg-black px-10 lg:px-20 bg-opacity-90 lg:pt-36 pt-16 pb-20 lg:pb-40 flex flex-col space-y-4"
+        className="bg-black px-8 lg:px-20 bg-opacity-90 lg:pt-36 pt-16 pb-20 lg:pb-40 flex flex-col space-y-4"
       >
         <Input name="name" placeholder="Your name" />
         <Input

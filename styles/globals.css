@@ -25,6 +25,15 @@ html {
   @apply mt-16;
 }
 
+.medium-zoom-overlay {
+  z-index: 98;
+  cursor: pointer;
+}
+
+.medium-zoom-image--opened {
+  z-index: 99;
+}
+
 @screen lg {
   .NOTE_CONTENT iframe {
     min-height: 40.5rem;
