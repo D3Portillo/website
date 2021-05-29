@@ -1,11 +1,12 @@
 export default function ExternalLink({
   children = null,
-  href = "/#",
+  href,
   target = "_blank",
   download = false,
   className,
   title,
   style,
+  ...rest
 }) {
   return (
     <a
@@ -16,6 +17,7 @@ export default function ExternalLink({
       className={className}
       target={target}
       rel="noreferer noopener"
+      {...rest}
     >
       {children}
     </a>

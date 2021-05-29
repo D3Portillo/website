@@ -7,7 +7,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "chroma-js": "^2.1.1",
     "date-fns": "^2.21.1",
     "medium-zoom": "^1.0.6",
     "next": "^10.2.0",

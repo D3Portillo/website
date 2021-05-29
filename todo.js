@@ -5,12 +5,15 @@
  * // * Image Container bug
  * // * SEO
  * // * Note presentation design update
- * * Random reads are really "random"
+ * // * Random reads are really "random"
  * // * Favicon
+ * // * Read more notes banner enhancement
+ * // * Fix mobile gallery next/prev button shadow issue
+ * * CSS issue for notes ml-20
+ * // * Desktop twitter share update
  * * Mejorar/Pulir las Notas
- * * Read more notes banner enhancement
- * * Fix mobile gallery next/prev button shadow issue
- * * Desktop twitter share update
+ * * Home - goodies, p card, cv svg udpate
+ * * Update pinata text at Goodies
  * // * /notes page show cropped items
  * // * Last update to footer
  * // * Fix on image focus movement in Homepage

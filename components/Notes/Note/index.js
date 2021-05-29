@@ -1,7 +1,5 @@
 import { ArrowUpRight } from "@/components/Icons"
 import Link from "next/link"
-import { useMemo } from "react"
-import getRandomBackgroundColor from "./helpers/getRandomBackgroundColor"
 
 export default function Note({
   created,
@@ -11,13 +9,8 @@ export default function Note({
   path,
   labels = [],
 }) {
-  const [backgroundColor, labelsDivider] = useMemo(() => {
-    const color = getRandomBackgroundColor()
-    const divider = labels.length ? "・" : " — "
-    return [color, divider]
-  }, [])
-  const noteIcon = icon ? icon : "/me/default_note_icon.png"
-  const labelsRender = created + labelsDivider + labels.join("・")
+  const noteIcon = icon || "/me/default_note_icon.png"
+  const labelsRender = created + " — " + labels.join("・")
   return (
     <Link href={`/notes/${path}`}>
       <a

@@ -6,7 +6,7 @@ import SeoTags from "@/components/SeoTags"
 import getDomain from "@/helpers/getDomain"
 import PageSeparator from "@/components/PageSeparator"
 import Link from "@/components/Link"
-import { useCallback, useMemo } from "react"
+import { useMemo } from "react"
 const IMAGE = getDomain("/seo/notes.png")
 const DESCRIPTION =
   "Estas son notas que hago y comparto con ustedes y NO, no es un Blog. A veces su contenido es en inglés."
@@ -16,11 +16,15 @@ const DESCRIPTION =
  */
 export default function NotesPage({ notes = [] }) {
   const notesURL = getDomain("/notes")
-  const myRandomRead = useCallback(() => {
-    const notesPath = notes.map(({ path }) => `${notesURL}/${path}`)
-    const randomIndex = notesPath.length * Math.random()
-    return notesPath[Math.floor(randomIndex)]
+  const notesPath = useMemo(() => {
+    return notes.map(({ path }) => `${notesURL}/${path}`)
   }, [notes])
+
+  function goToRandomRead() {
+    const randomIndex = notesPath.length * Math.random()
+    const url = notesPath[Math.floor(randomIndex)]
+    window.open(url, "_blank")
+  }
 
   return (
     <>
@@ -38,7 +42,7 @@ export default function NotesPage({ notes = [] }) {
         ARE YOU BORED?
       </b>
       <div className="flex mt-8 mb-24">
-        <Link href={myRandomRead()}>
+        <Link href="#0" target="_self" onClick={goToRandomRead}>
           Grab a <strike>Random</strike> read
         </Link>
       </div>

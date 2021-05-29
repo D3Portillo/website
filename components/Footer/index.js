@@ -46,9 +46,9 @@ export default function Footer() {
         </div>
         <div className="flex w-full lg:w-auto flex-col lg:items-end mb-6 pb-12 lg:mb-0 lg:pb-0 border-b lg:border-none">
           <strong className="mb-2">
-            MORE LINKS{" "}
+            LINKS HERE
             <span
-              className="hidden lg:inline"
+              className="ml-1 hidden lg:inline"
               role="image"
               aria-label="point down sign"
             >

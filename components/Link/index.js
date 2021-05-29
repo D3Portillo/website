@@ -38,7 +38,7 @@ function Readable({ children = null, href, title }) {
   )
 }
 
-function Link({ children = null, href, target, download, title }) {
+function Link({ children = null, href, target, download, title, ...rest }) {
   return (
     <ExternalLink
       title={title}
@@ -46,6 +46,7 @@ function Link({ children = null, href, target, download, title }) {
       target={target}
       href={href}
       className="px-2 inline-block group italic py-2 font-bold bg-yellow"
+      {...rest}
     >
       {children}
       <ArrowUpRight className="inline text-2xl lg:text-4xl ml-3 transform group-hover:translate-x-px group-hover:-translate-y-px" />
