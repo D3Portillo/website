@@ -15,6 +15,7 @@ const kit = new Octokit({ auth: GH_TOKEN })
  * @property { string } cover
  * @property { string } description
  * @property { string? } coverPlaceholder
+ * @property { string? } icon
  */
 
 /**
@@ -45,10 +46,16 @@ export default async function getNotes(opt = {}) {
 function getNotesMatter(note) {
   const { created_at, body, labels, title } = note
   const { data: frontmatter } = matter(body)
-  const { path = "no-path", cover = 0, description = "" } = frontmatter
+  const {
+    path = "no-path",
+    cover = 0,
+    icon = 0,
+    description = "",
+  } = frontmatter
   const parsedPath = path.replace(/ +/g, "-")
   return {
     cover,
+    icon,
     description,
     path: parsedPath,
     created_at,

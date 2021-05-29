@@ -56,21 +56,21 @@ function Menu({ onClose }) {
         </div>
       </div>
       <div className="flex mt-20 overflow-auto py-8 flex-col items-center space-y-3">
-        <a href="/" className="text-2xl p-4">
-          Home
-        </a>
         <a href="/notes" className="text-2xl p-4">
-          Notes
+          MY NOTES
+        </a>
+        <a href="/" className="text-2xl p-4">
+          HOME
+        </a>
+        <a href="/goodies" className="text-2xl p-4">
+          GOODIES
         </a>
         <ExternalLink
           href="https://twitter.com/d3portillo"
           className="text-2xl p-4"
         >
-          Twitter
+          MY TWITTER
         </ExternalLink>
-        <a href="/goodies" className="text-2xl p-4">
-          Goodies
-        </a>
       </div>
     </StyledMenu>
   )

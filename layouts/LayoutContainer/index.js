@@ -7,7 +7,7 @@ export default function LayoutContainer({ children = null }) {
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <title>{TITLE}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>

@@ -18,12 +18,13 @@ const Grid = styled.div`
 export default function Notes({ notes = [] }) {
   const notesRender = useMemo(() => {
     const [first, ...rest] = notes.map((note) => {
-      const { created_at, description, title, labels, path } = note
+      const { created_at, description, title, labels, path, icon } = note
       const date = format(new Date(created_at), "MMMM dd")
       return (
         <Note
           key={created_at + title}
           created={date}
+          icon={icon}
           description={description}
           title={title}
           path={path}

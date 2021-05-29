@@ -4,7 +4,13 @@
  * // * Layout components
  * // * Image Container bug
  * // * SEO
+ * // * Note presentation design update
+ * * Random reads are really "random"
+ * // * Favicon
  * * Mejorar/Pulir las Notas
+ * * Read more notes banner enhancement
+ * * Fix mobile gallery next/prev button shadow issue
+ * * Desktop twitter share update
  * // * /notes page show cropped items
  * // * Last update to footer
  * // * Fix on image focus movement in Homepage
