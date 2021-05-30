@@ -2,10 +2,10 @@ const { fontFamily } = require("tailwindcss/defaultTheme")
 
 module.exports = {
   purge: [
-    "./pages/**/*.js",
-    "./layouts/**/*.js",
     "./components/**/*.js",
     "./helpers/**/*.js",
+    "./layouts/**/*.js",
+    "./pages/**/*.js",
   ],
   darkMode: false,
   theme: {
