@@ -9,11 +9,13 @@
  * // * Favicon
  * // * Read more notes banner enhancement
  * // * Fix mobile gallery next/prev button shadow issue
- * * CSS issue for notes ml-20
+ * // * CSS issue for notes ml-20
  * // * Desktop twitter share update
+ * // * Mejorar presentación de notas
+ * * Boost load time replacing with Next Link
  * * Mejorar/Pulir las Notas
- * * Home - goodies, p card, cv svg udpate
- * * Update pinata text at Goodies
+ * // * Home - goodies, p card, cv. Svg update
+ * // * Update pinata text at Goodies
  * // * /notes page show cropped items
  * // * Last update to footer
  * // * Fix on image focus movement in Homepage

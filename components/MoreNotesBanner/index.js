@@ -11,7 +11,7 @@ export default function MoreNotesBanner() {
           </span>
           HEY{" — "}
           <br />
-          WANT TO READ MORE NOTES?
+          WANNA READ MORE STUFF ?
         </Title>
         <Link href="/notes">Sure, take me there</Link>
       </div>
