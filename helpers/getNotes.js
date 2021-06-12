@@ -2,7 +2,7 @@ import getImageMetadata from "@/helpers/getImageMetadata"
 import matter from "gray-matter"
 import { Octokit } from "@octokit/rest"
 const { GH_TOKEN } = process.env
-const REPO_NAME = "website-2"
+const REPO_NAME = "website"
 const READY_TAG = "ready-to-publish"
 const kit = new Octokit({ auth: GH_TOKEN })
 /**

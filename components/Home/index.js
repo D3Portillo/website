@@ -32,7 +32,7 @@ export default function Home() {
       <p className="max-w-xl pt-10 text-2xl lg:text-4xl text-right">
         👋 Hey, <i>Denny</i> here.
         <br />
-        Love <u>JavaScript</u> and playing around with the Web Universe.
+        Love <u>JavaScript</u><br/> and playing around with the Web Universe.
         <br />
         <Link.Minimal target="_self" href={`#${FORM_ID}`}>
           Let's have a coffee
