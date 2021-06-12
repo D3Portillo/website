@@ -6,14 +6,12 @@ const { exec } = require("child_process")
  * @returns { Promise<Buffer> }
  */
 export default async function getImageCover(text = "") {
+  const THIS_DIR = process.cwd() + "/helpers/getImageCover"
   const base64 = await new Promise((resolve) => {
-    exec(
-      `node ./helpers/getImageCover/makeCover "${text}"`,
-      (error, base64) => {
-        if (error) resolve("")
-        else resolve(base64)
-      }
-    )
+    exec(`node ${THIS_DIR}/makeCover "${text}"`, (error, base64) => {
+      if (error) resolve("")
+      else resolve(base64)
+    })
   })
 
   return Buffer.from(base64, "base64")
