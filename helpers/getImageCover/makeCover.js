@@ -29,4 +29,6 @@ async function init() {
   process.stdout.write(base64)
 }
 
-init()
+init().catch((coverError) => {
+  console.error({ coverError })
+})
