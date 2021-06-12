@@ -40,7 +40,7 @@ export default function Note({
             <ArrowUpRight className="text-3xl" />
           </div>
         </div>
-        <section className="relative z-1 px-8 py-10 lg:p-20 leading-tight mb-6">
+        <section className="relative z-1 px-8 py-10 lg:p-20 leading-tight mb-6 max-w-7xl">
           <h2 className="text-3xl lg:text-6xl font-bold">{title}</h2>
           <div className="mb-4 mt-2 lg:hidden text-sm whitespace-nowrap items-center uppercase">
             {labelsRender}

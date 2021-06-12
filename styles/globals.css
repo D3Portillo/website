@@ -25,6 +25,19 @@ html {
   @apply mt-16;
 }
 
+.NOTE_CONTENT blockquote p {
+  @apply text-2xl;
+}
+
+@screen lg {
+  .NOTE_CONTENT iframe {
+    min-height: 40.5rem;
+  }
+  .NOTE_CONTENT blockquote p {
+    @apply text-7xl;
+  }
+}
+
 .medium-zoom-overlay {
   z-index: 98;
   cursor: pointer;
@@ -32,10 +45,4 @@ html {
 
 .medium-zoom-image--opened {
   z-index: 99;
-}
-
-@screen lg {
-  .NOTE_CONTENT iframe {
-    min-height: 40.5rem;
-  }
 }

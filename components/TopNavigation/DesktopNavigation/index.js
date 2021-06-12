@@ -4,6 +4,7 @@ import Image from "@/components/Image"
 import { FiTwitter } from "react-icons/fi"
 import { FORM_ID } from "@/components/ContactForm"
 import meAsB64 from "../constants/meAsB64"
+import Link from "next/link"
 
 function NavigationLink({ href, children = null }) {
   return (
@@ -27,7 +28,9 @@ export default function DesktopNavigation({
         </a>
         <RegularText className="flex space-x-8">
           <NavigationLink href="/#">Home</NavigationLink>
-          <NavigationLink href="/notes">Notes</NavigationLink>
+          <Link href="/notes">
+            <a className="hover:line-through">Notes</a>
+          </Link>
           <NavigationLink href={`/#${FORM_ID}`}>Contact</NavigationLink>
         </RegularText>
         <div className="flex-grow"></div>
