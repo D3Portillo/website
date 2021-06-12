@@ -10,7 +10,7 @@ const height = 630
  */
 async function init() {
   const { 2: text } = process.argv
-  const THIS_DIR = process.cwd() + "/services/getImageCover"
+  const THIS_DIR = process.cwd() + "/helpers/getImageCover"
   registerFont(`${THIS_DIR}/Poppins-Bold.ttf`, {
     family: "Poppins",
   })

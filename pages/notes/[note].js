@@ -1,7 +1,7 @@
 import getNote from "@/helpers/getNote"
 import getNotes, { Note } from "@/helpers/getNotes"
 import getImageCover from "@/helpers/getImageCover"
-import addBufferToPublic from "@/helpers/addBufferToPublic"
+import addBufferToFs from "@/helpers/addBufferToFs"
 import PageSeparator from "@/components/PageSeparator"
 import FullWidthContainer from "@/components/FullWidthContainer"
 import mediumZoom from "medium-zoom"
@@ -61,7 +61,7 @@ export async function getStaticProps({ params }) {
   if (!cover) {
     const coverBuffer = await getImageCover(title)
     seoImage = getDomain(
-      await addBufferToPublic({
+      await addBufferToFs({
         path: `/notes/${path}.png`,
         content: coverBuffer,
       })

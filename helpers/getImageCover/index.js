@@ -8,7 +8,7 @@ const { exec } = require("child_process")
 export default async function getImageCover(text = "") {
   const base64 = await new Promise((resolve) => {
     exec(
-      `node ./services/getImageCover/makeCover "${text}"`,
+      `node ./helpers/getImageCover/makeCover "${text}"`,
       (error, base64) => {
         if (error) resolve("")
         else resolve(base64)
