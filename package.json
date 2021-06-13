@@ -22,7 +22,7 @@
     "@octokit/rest": "^18.5.2",
     "airtable": "^0.10.1",
     "autoprefixer": "^10.2.5",
-    "canvas": "^2.7.0",
+    "canvas": "2.6.1",
     "canvas-txt": "^3.0.0",
     "centra": "^2.4.2",
     "gray-matter": "^4.0.2",

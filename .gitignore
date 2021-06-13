@@ -36,3 +36,4 @@ yarn-error.log*
 
 public/GENERATED_CONTENT
 *.lock
+package-lock.json
