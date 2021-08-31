@@ -7,11 +7,11 @@ assignees: ''
 
 ---
 
-\-\-\-
+---
 description: your content here
 path: your url path
 icon: icon url
 cover: your cover url
-\-\-\-
+\---
 
 # Big Title
